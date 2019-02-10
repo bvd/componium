@@ -1,14 +1,14 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('componiumApp.musicList', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
+  $routeProvider.when('/musicList', {
+    templateUrl: 'musicList/musicList.html',
+    controller: 'musicListCtrl'
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('musicListCtrl', [function() {
 
 }]);

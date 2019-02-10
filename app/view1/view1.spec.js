@@ -1,15 +1,15 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe('componiumApp.composition module', function() {
 
-  beforeEach(module('myApp.view1'));
+  beforeEach(module('componiumApp.composition'));
 
-  describe('view1 controller', function(){
+  describe('composition controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view1Ctrl = $controller('View1Ctrl');
-      expect(view1Ctrl).toBeDefined();
+      var compositionCtrl = $controller('compositionCtrl');
+      expect(compositionCtrl).toBeDefined();
     }));
 
   });

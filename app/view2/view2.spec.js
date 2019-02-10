@@ -1,15 +1,15 @@
 'use strict';
 
-describe('myApp.view2 module', function() {
+describe('componiumApp.musicList module', function() {
 
-  beforeEach(module('myApp.view2'));
+  beforeEach(module('componiumApp.musicList'));
 
-  describe('view2 controller', function(){
+  describe('musicList controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view2Ctrl = $controller('View2Ctrl');
-      expect(view2Ctrl).toBeDefined();
+      var musicListCtrl = $controller('musicListCtrl');
+      expect(musicListCtrl).toBeDefined();
     }));
 
   });
