@@ -47,13 +47,22 @@
   </svg>
 </div>
 
-<!--track-->
+<!--tracks-->
+<div id="allTracks" style="position:absolute; left: 60px; top:212px;">
+  <div ng-repeat="track in tracks" style="position:absolute; left: 0px; top:{{track.height * $index}}px">
+    <svg width="827">
+      <rect width="827" ng-attr-height="{{track.height}}" style="fill:thistle"></rect>
+      <circle cx="52.5" cy="10" r="1" fill="white"></circle>
+    </svg>
 
-<div ng-show="1" style="position:absolute; left: 60px; top:212px" class="ng-scope">
-  <svg width="827" height="110">
-    <rect width="827" height="44" style="fill:thistle"></rect>
-    <circle cx="52.5" cy="10" r="1" fill="white"></circle>
-  </svg>
+    <!-- clips within the track will go here with ng-repeat and we will use the position of the clip from the javascript-->
+    <div ng-repeat="clip in track.clips" style="position:absolute; left: 0px; top: 0px;">
+      <svg>
+        <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}" ng-attr-height="{{track.height}}"></rect>
+      </svg>
+    </div>
+
+  </div>
 </div>
 
 <div ng-show="1" style="position:absolute;left: 0px;top: 900px;" class="ng-scope">
@@ -73,7 +82,7 @@
 
 <!--rectangle presentation composition-->
 <div ng-show="1" style="position:absolute; left: 10px; top: 320px" class="ng-scope">
-  
+
   <svg width="907" height="110">
     <rect width="907" height="60" style="fill:none;stroke-width:1.5;stroke:grey"></rect>
   </svg>
