@@ -5,7 +5,8 @@
     <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z" style="fill:rgb(230, 132, 35)"></path>
     <text x="100" y="182" font-family="Verdana" font-size="14" fill="white">MUZIEK LIJST</text>
   </svg>
-</div><!--muziek Lijst-->
+</div>
+<!--muziek Lijst-->
 
 
 <!--line and circle-->
@@ -25,8 +26,8 @@
     <rect x="18" y="16" width="4" height="21" style="fill:white;"></rect>
   </svg>
   <div ng-show="1" style="position:absolute; left: 40px; top: 60px"></div>
-  
-  
+
+
 </div>
 
 <!--triangleblack for the button-->
@@ -57,41 +58,53 @@
 
 <div ng-show="1" style="position:absolute;left: 0px;top: 900px;" class="ng-scope">
   <svg width="1200" height="440">
-    <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z" style="fill:rgb(123, 102, 168)"></path>
+    <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z"
+      style="fill:rgb(123, 102, 168)"></path>
   </svg>
 </div>
 
 <!--tableau-->
 <div ng-show="1" style="position:absolute;left: 0px;top: 900px;" class="ng-scope">
   <svg width="1200" height="440">
-    <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z" style="fill:rgb(123, 102, 168)"></path>
+    <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z"
+      style="fill:rgb(123, 102, 168)"></path>
   </svg>
 </div>
 
 <!--rectangle presentation composition-->
-<div ng-show="1" style="position:absolute; left: -50px; top: 320px" class="ng-scope">
+<div ng-show="1" style="position:absolute; left: 10px; top: 320px" class="ng-scope">
+  
   <svg width="907" height="110">
     <rect width="907" height="60" style="fill:none;stroke-width:1.5;stroke:grey"></rect>
   </svg>
+
+  <!--triangle black left for the presentation-->
+  <div style="position:absolute; left: 0px; top: 17px">
+    <svg style="position:absolute; left: 0px; top: 0px">
+      <polygon points="21,10 5,21 5,0.5" style="fill: rgb(62, 107, 145)"></polygon>
+    </svg>
+  </div>
+
+  <!-- title -->
+  <div style="position:absolute; left: 0px; top: 17px">
+    <svg height="80" width="600">
+      <text x="350" y="23" style="font-weight: bold" font-family="Verdana" font-size="30" fill="rgb(62, 107, 145)">COMPOSITION</text>
+    </svg>
+  </div>
+
+  <!--triangleblack right for the button-->
+  <div ng-show="1" style="position:absolute; left: 120px; top: 120px" class="ng-scope" onclick="console.log('hi');">
+    <svg style="position:absolute; left: 0px; top: 0px">
+      <polygon points="20,20 0,20 0,0" style="fill: rgb(62, 107, 145)"></polygon>
+    </svg>
+  </div>
+
 </div>
 
 
-<!--triangleblack left for the presentation-->
-<div ng-show="1" style="position:absolute; left: 0px; top: 17px" class="ng-scope">
-  <svg style="position:absolute; left: 0px; top: 0px">
-    <polygon points="21,10 5,21 5,0.5" style="fill: rgb(62, 107, 145)"></polygon>
-  </svg>
-  <svg height="80" width="600">
-    <text x="350" y="23" style="font-weight: bold" font-family="Verdana" font-size="30" fill="rgb(62, 107, 145)">COMPOSITION</text>
-  </svg>
-</div>
 
-<!--triangleblack right for the button-->
-<div ng-show="1" style="position:absolute; left: 120px; top: 0px" class="ng-scope">
-  <svg style="position:absolute; left: 0px; top: 0px">
-    <polygon points="21,10 5,21 5,0.5" style="fill: rgb(62, 107, 145)"></polygon>
-  </svg>
-</div>
+
+
 
 <!--title-->
 <div ng-show="1" style="position:absolute; left: -90px; top: 70px" class="ng-scope">
@@ -119,5 +132,3 @@
 
 
 </div>
-
-  
