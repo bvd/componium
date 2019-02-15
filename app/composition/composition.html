@@ -1,105 +1,123 @@
 <p>{{myName}}</p>
 
-          <!--muziek Lijst-->     
-          <div ng-show="1" style="position:absolute; left: 0px; top: 0px">
-            <svg  x="0" y="0" width="220" height="220">
-              <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z" style = "fill:rgb(230, 132, 35)"  />
-              <text x="100" y="182" font-family="Verdana" font-size="14" fill="white" >MUZIEK LIJT</text>
-            </svg>
+<div ng-show="1" style="position:absolute;left: 800px;top: 600px;" class="ng-scope">
+  <svg x="0" y="0" width="220" height="220">
+    <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z" style="fill:rgb(230, 132, 35)"></path>
+    <text x="100" y="182" font-family="Verdana" font-size="14" fill="white">MUZIEK LIJST</text>
+  </svg>
+</div><!--muziek Lijst-->
+
 
 <!--line and circle-->
-  <div style="position:absolute; left: 50px; top: 20px" >
-		<svg style="position:absolute; left: 50px; top: 20px">
-			<circle cx="10" cy="10" r="10" fill="red" />
-		</svg>
-		<svg style="position:absolute; left: 60px; top: 40px" height="200" width="1">
-			<line x1="0" y1="0" x2="0" y2="200" style="stroke:black;stroke-width:1" />
-		</svg>
-  </div>
+<div style="position:absolute; left: 50px; top: 600px" class="ng-scope">
+  <svg style="position:absolute; left: 50px; top: 20px">
+    <circle cx="10" cy="10" r="10" fill="red"></circle>
+  </svg>
+  <svg style="position:absolute; left: 60px; top: 40px" height="200" width="1">
+    <line x1="0" y1="0" x2="0" y2="200" style="stroke:black;stroke-width:1"></line>
+  </svg>
+</div>
+
+<!-- button play/stop+triangle -->
+<div ng-show="1" style="position:absolute; left: 20px; top: 50px" class="ng-scope">
+  <svg style="position:absolute; left: 10px; top: 50px">
+    <circle cx="27" cy="27" r="27" fill="red"></circle>
+    <rect x="18" y="16" width="4" height="21" style="fill:white;"></rect>
+  </svg>
+  <div ng-show="1" style="position:absolute; left: 40px; top: 60px"></div>
   
-    <!-- button play/stop+triangle -->
-    <div ng-show="1" style="position:absolute; left: 20px; top: 50px">
-      <svg style="position:absolute; left: 10px; top: 50px">
-        <circle cx="27" cy="27" r="27" fill="red" />
-        <rect x="18" y="16" width="4" height="21" style="fill:white;" />
-      </svg>
-      <div ng-show="1" style="position:absolute; left: 40px; top: 60px"></div>
-        </svg>
-            </svg>
-    </div>
+  
+</div>
 
-    <!--triangleblack for the button-->
-    <div ng-show="1" style="position:absolute; left: 120px; top: 50px">
-        <svg style="position:absolute; left: -70px; top: 66px">
-              <polygon points="21,10 5,21 5,0.5" style="fill:white" />
-            </svg>
+<!--triangleblack for the button-->
+<div ng-show="1" style="position:absolute; left: 120px; top: 50px" class="ng-scope">
+  <svg style="position:absolute; left: -70px; top: 66px">
+    <polygon points="21,10 5,21 5,0.5" style="fill:white"></polygon>
+  </svg>
+</div>
 
-            <!--OVER DEZE APPLICATE-->
-<div ng-show="1" style="position:absolute; left: 0px; top: 0px"></div>
-<svg  x="0" y="0" width="220" height="220">
-       <path d="M40,30 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z" style = "fill:rgb(230, 132, 35)" />
-         <text x="40" y="53" font-family="Verdana" font-size="14" fill="white" >OVER DEZE</text>
-         <text x="40" y="72" font-family="Verdana" font-size="14" fill="white" >APPLICATE</text>
-           </svg>
-        
-    <!--track-->
-    <div ng-show="1" style="position:absolute; left: 60px; top:212px">
-      <svg style="position:absolute; left: -122px; top: 0px">
-        </svg>
-          <svg width="827" height="110">
-        <rect width="827" height="44" style="fill:thistle" />
-        <circle  cx="1.5" cy="1.5" r="1.5" fill="white" />
-         </svg>
+
+<!--OVER DEZE APPLICATE-->
+<div ng-show="1" style="position:absolute; left: 0px; top: 0px" class="ng-scope">
+  <svg x="0" y="0" width="220" height="220">
+    <path d="M40,30 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z" style="fill:rgb(230, 132, 35)"></path>
+    <text x="40" y="53" font-family="Verdana" font-size="14" fill="white">OVER DEZE</text>
+    <text x="40" y="72" font-family="Verdana" font-size="14" fill="white">APPLICATE</text>
+  </svg>
+</div>
+
+<!--track-->
+
+<div ng-show="1" style="position:absolute; left: 60px; top:212px" class="ng-scope">
+  <svg width="827" height="110">
+    <rect width="827" height="44" style="fill:thistle"></rect>
+    <circle cx="52.5" cy="10" r="1" fill="white"></circle>
+  </svg>
+</div>
+
+<div ng-show="1" style="position:absolute;left: 0px;top: 900px;" class="ng-scope">
+  <svg width="1200" height="440">
+    <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z" style="fill:rgb(123, 102, 168)"></path>
+  </svg>
+</div>
 
 <!--tableau-->
-<div ng-show="1" style="position:absolute; left:-120px; top: 0px">
-    <svg width="1200" height="440">
-      <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z" style="fill:rgb(123, 102, 168)" />
-    </svg>
-</svg>
+<div ng-show="1" style="position:absolute;left: 0px;top: 900px;" class="ng-scope">
+  <svg width="1200" height="440">
+    <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z" style="fill:rgb(123, 102, 168)"></path>
+  </svg>
+</div>
 
 <!--rectangle presentation composition-->
-<div ng-show="1" style="position:absolute; left: -50px; top: 320px">
-<svg width="907" height="110">
-<rect width="907" height="60" style="fill:none;stroke-width:1.5;stroke:grey" />
-</svg>
+<div ng-show="1" style="position:absolute; left: -50px; top: 320px" class="ng-scope">
+  <svg width="907" height="110">
+    <rect width="907" height="60" style="fill:none;stroke-width:1.5;stroke:grey"></rect>
+  </svg>
+</div>
 
- <!--triangleblack left for the presentation-->
- <div ng-show="1" style="position:absolute; left: 0px; top: 17px">
+
+<!--triangleblack left for the presentation-->
+<div ng-show="1" style="position:absolute; left: 0px; top: 17px" class="ng-scope">
   <svg style="position:absolute; left: 0px; top: 0px">
-        <polygon points="21,10 5,21 5,0.5" style="fill: rgb(62, 107, 145)" />
-      </svg>
-      <svg height="80" width="600">
-        <text x="350" y="23"  style="font-weight: bold" font-family="Verdana" font-size="30" fill="rgb(62, 107, 145)">COMPOSITION</text>
-      </svg>
+    <polygon points="21,10 5,21 5,0.5" style="fill: rgb(62, 107, 145)"></polygon>
+  </svg>
+  <svg height="80" width="600">
+    <text x="350" y="23" style="font-weight: bold" font-family="Verdana" font-size="30" fill="rgb(62, 107, 145)">COMPOSITION</text>
+  </svg>
+</div>
 
-      <!--triangleblack right for the button-->
-    <div ng-show="1" style="position:absolute; left: 120px; top: 0px">
-        <svg style="position:absolute; left: 0px; top: 0px">
-              <polygon points="21,10 5,21 5,0.5" style="fill: rgb(62, 107, 145)" />
-            </svg>
+<!--triangleblack right for the button-->
+<div ng-show="1" style="position:absolute; left: 120px; top: 0px" class="ng-scope">
+  <svg style="position:absolute; left: 0px; top: 0px">
+    <polygon points="21,10 5,21 5,0.5" style="fill: rgb(62, 107, 145)"></polygon>
+  </svg>
+</div>
 
-            <!--title-->
-    <div ng-show="1" style="position:absolute; left: -90px; top: 70px">
-      <svg style="position:absolute; left: 0px; top: 0px">
-        </svg>
-      <svg height="100" width="200">
-          <text x="0" y="20" font-family="Verdena" font-size="30" style="fill:rgb(62, 107, 145)">hoge strijkers</text>
-        </svg>
+<!--title-->
+<div ng-show="1" style="position:absolute; left: -90px; top: 70px" class="ng-scope">
+  <svg style="position:absolute; left: 0px; top: 0px">
+  </svg>
+  <svg height="100" width="200">
+    <text x="0" y="20" font-family="Verdena" font-size="30" style="fill:rgb(62, 107, 145)">hoge strijkers</text>
+  </svg>
+</div>
 
-        <!--rectangle mp3-->
-        <!-- change -->
-        <div ng-show="1" style="position:absolute; left: 0px; top: 0px">
-            <svg style="position:absolute; left: 0px; top: 0px">
-        <g>
-            <rect style="fill:lightskyblue" x="14" y="40" width="40" height="30" />
-        </g>
-        <g>
-            <rect style="fill:lightskyblue"  x="56" y="40" width="40" height="30" />
-        </g>
-        <rect style="fill:lightskyblue"  x="98" y="40" width="40" height="30" />
-    </svg>
+<!--rectangle mp3-->
+<!-- change -->
+<div ng-show="1" style="position:absolute; left: 0px; top: 0px" class="ng-scope">
+  <svg style="position:absolute; left: 0px; top: 0px">
+    <g>
+      <rect style="fill:lightskyblue" x="14" y="40" width="40" height="30"></rect>
+    </g>
+    <g>
+      <rect style="fill:lightskyblue" x="56" y="40" width="40" height="30"></rect>
+    </g>
+    <rect style="fill:lightskyblue" x="98" y="40" width="40" height="30"></rect>
+  </svg>
+</div>
 
-  </body>
+
+
+</div>
+
   
-  </html>
