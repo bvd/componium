@@ -10,5 +10,5 @@ app.config(['$routeProvider', function($routeProvider) {
 }]);
 
 app.controller('compositionCtrl', ['$scope', function($scope) {
-  $scope.myName = "Bertus";
+  $scope.myName = "Bertus and Léticia are some wonderful person with big energy inside !!";
 }]);
