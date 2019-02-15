@@ -8,7 +8,7 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: 'compositionCtrl'
   });
 }]);
-
+// lalala
 app.controller('compositionCtrl', ['$scope', function($scope) {
   $scope.myName = "Bertus and Léticia are some wonderful person with big energy inside !!";
 }]);
