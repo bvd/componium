@@ -15,7 +15,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
 
   $scope.tracks = [
     {
-      height: 44,
+      height: 34,
       clips: [
         {
           position: 20,
@@ -30,7 +30,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       ]
     },
     {
-      height: 44,
+      height: 34,
       clips: [
         {
           position: 20,
@@ -44,8 +44,36 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         }
       ]
     },
+    {
+      height: 34,
+      clips: [
         {
-          height: 44,
+          position: 20,
+          width: 27,
+          color: "#00FF00"
+        },
+        {
+          position: 80,
+          width: 27,
+          color: "#FF0000"
+        },
+      ]
+    },
+    {
+      height: 34,
+      clips: [
+        {
+          position: 20,
+          width: 27,
+          color: "#00FF00"
+        },
+        {
+          position: 80,
+          width: 27,
+          color: "#FF0000"
+        },
+        {
+          height: 34,
           clips: [
             {
               position: 20,
@@ -56,61 +84,63 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
               position: 80,
               width: 27,
               color: "#FF0000"
-            },
+            }
           ]
         },
-            {
-              height: 44,
-              clips: [
-                {
-                  position: 20,
-                  width: 27,
-                  color: "#00FF00"
-                },
-                {
-                  position: 80,
-                  width: 27,
-                  color: "#FF0000"
-                },
-                //...etc
-          ]
-        }
-      ];
-
-      $scope.parts = [
         {
-          name: "wood",
-          margin: "2px",
+          height: 34,
           clips: [
             {
-              width: "27px",
-              height: "60px",
+              position: 20,
+              width: 27,
               color: "#00FF00"
             },
             {
-              width: "27px",
-              height: "60px",
+              position: 80,
+              width: 27,
               color: "#FF0000"
             }
-            //... etc
           ]
         },
+        //...etc
+      ]
+    }
+  ];
+
+  $scope.parts = [
+    {
+      name: "wood",
+      margin: "2px",
+      clips: [
         {
-          name: "brass",
-          margin: "2px",
-          clips: [
-            {
-              width: "27px",
-              height: "60px",
-              color: "#FF0000"
-            },
-            {
-              width: "27px",
-              height: "60px",
-              color: "#FF0000"
-            }
-            //... etc
-          ]
+          width: "27px",
+          height: "60px",
+          color: "#00FF00"
+        },
+        {
+          width: "27px",
+          height: "60px",
+          color: "#FF0000"
         }
-      ];
-    }]);
+        //... etc
+      ]
+    },
+    {
+      name: "brass",
+      margin: "2px",
+      clips: [
+        {
+          width: "27px",
+          height: "60px",
+          color: "#FF0000"
+        },
+        {
+          width: "27px",
+          height: "60px",
+          color: "#FF0000"
+        }
+        //... etc
+      ]
+    }
+  ];
+}]);
