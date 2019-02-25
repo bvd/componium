@@ -16,6 +16,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
   $scope.tracks = [
     {
       height: 34,
+      color: "pink",
       clips: [
         {
           position: 20,
