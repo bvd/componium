@@ -12,31 +12,33 @@ app.config(['$routeProvider', function ($routeProvider) {
 app.controller('compositionCtrl', ['$scope', function ($scope) {
 
   $scope.myName = "Bertus and Léticia are some wonderful person who love each other with big energy inside !!";
-
+  $scope.quantizePoints = 
+  
   $scope.tracks = [
     {
-      height: 34,
+      height: 35,
       color: "pink",
       clips: [
         {
           position: 20,
-          width: 27,
+          width: 35,
           color: "#00FF00"
         },
         {
           position: 80,
           width: 27,
-          color: "#00FF00"
+          color: "#D8BFD8"
         }
       ]
     },
     {
-      height: 34,
+      height: 35,
+      color: "plum",
       clips: [
         {
           position: 20,
-          width: 27,
-          color: "#00FF00"
+          width: 35,
+          color: "#D8BFD8"
         },
         {
           position: 80,
@@ -46,42 +48,29 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       ]
     },
     {
-      height: 34,
+      height: 35,
+      color: "pink",
       clips: [
         {
           position: 20,
-          width: 27,
+          width: 35,
           color: "#00FF00"
         },
         {
           position: 80,
           width: 27,
-          color: "#FF0000"
+          color: "#D8BFD8"
         },
       ]
     },
     {
-      height: 34,
+      height: 35,
+      color: "plum",
       clips: [
         {
-          position: 20,
-          width: 27,
-          color: "#00FF00"
-        },
-        {
-          position: 80,
-          width: 27,
-          color: "#FF0000"
-        }
-      ]
-    },
-    {
-      height: 34,
-      clips: [
-        {
-          position: 20,
-          width: 27,
-          color: "#00FF00"
+          position: 0,
+          width: 35,
+          color: "#D8BFD8"
         },
         {
           position: 80,
@@ -91,12 +80,29 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       ]
     },
     {
-      height: 34,
+      height: 35,
+      color: "pink",
       clips: [
         {
-          position: 20,
-          width: 27,
+          position: 5,
+          width: 35,
           color: "#00FF00"
+        },
+        {
+          position: 80,
+          width: 27,
+          color: "#D8BFD8"
+        }
+      ]
+    },
+    {
+      height: 35,
+      color: "plum",
+      clips: [
+        {
+          position: 10,
+          width: 35,
+          color: "#D8BFD8"
         },
         {
           position: 80,
@@ -109,25 +115,33 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
 
   $scope.parts = [
     {
-      name: "wood",
-      margin: "2px",
+      name: "Wood",
+      size: 35,
+      color: "plum",
+      font: "'Arvo', serif",
+      margin: "20px",
       clips: [
         {
-          width: "27px",
-          height: "60px",
-          color: "#00FF00"
+          position:"10",
+          width: "40px",
+          height: "30px",
+          color: "#87CEFA"
         },
         {
-          width: "27px",
-          height: "60px",
-          color: "#FF0000"
+          position:"40",
+          width: "40px",
+          height: "30px",
+          color: "#87CEFA"
         }
         //... etc
       ]
     },
     {
-      name: "brass",
-      margin: "2px",
+      name: "Brass",
+      size: 35,
+      color: "plum",
+      font: "'Arvo', serif",
+      margin:"20px",
       clips: [
         {
           width: "27px",

@@ -3,7 +3,8 @@
 <!--muziek Lijst-->
 <div style="position:absolute;left: 0px;top: -100px;" class="ng-scope">
   <svg x="0" y="0" width="220" height="220">
-    <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z" style="fill:rgb(230, 132, 35)"></path>
+    <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z"
+      style="fill:rgb(230, 132, 35)"></path>
     <text x="90" y="182" style="font-family: 'Arvo', serif" font-size="14" fill="white">MUZIEK LIJST</text>
   </svg>
 </div>
@@ -11,7 +12,8 @@
 <!--OVER DEZE APPLICATE-->
 <div ng-show="1" style="position:absolute; left: 900px; top: 22px" class="ng-scope">
   <svg x="0" y="0" width="220" height="220">
-    <path d="M40,30 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z" style="fill:rgb(230, 132, 35)"></path>
+    <path d="M40,30 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z"
+      style="fill:rgb(230, 132, 35)"></path>
     <text x="40" y="53" style="font-family: 'Arvo', serif" font-size="14" fill="white">OVER DEZE</text>
     <text x="40" y="72" style="font-family: 'Arvo', serif" font-size="14" fill="white">APPLICATE</text>
   </svg>
@@ -20,7 +22,8 @@
 <!--tableau with tracks-->
 <div style="position:absolute;left: 100px;top: 80px;" class="ng-scope">
   <svg width="1200" height="440">
-    <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z"
+    <path
+      d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z"
       style="fill:rgb(123, 102, 168)"></path>
   </svg>
   <!-- button play/stop+triangle -->
@@ -34,97 +37,128 @@
       <svg style="position:absolute; left: 0px; top: 0px">
         <polygon points="21,10 5,21 5,0.5" style="fill:white"></polygon>
       </svg>
-      <!--rectangle contain tracks-->
-      <div style="position:absolute; left: 45px; top: -30px" class="ng-scope">
-        <svg width="900" height="440">
-          <rect width="833" height="215" style="fill:none;stroke-width:5;stroke:rgb(209, 198, 198)"></rect>
+    </div>
+  </div>
+  <!--rectangle contain tracks-->
+  <div style="position:absolute; left: 80px; top: 60px" class="ng-scope">
+    <svg width="900" height="440">
+      <rect width="833" height="215" style="fill:none;stroke-width:5;stroke:rgb(209, 198, 198)"></rect>
+    </svg>
+    <!--tracks-->
+    <div id="allTracks" style="position:absolute; left: 2.8px; top:5px;">
+      <div ng-repeat="track in tracks" style="position:absolute; left: 0px; top:{{track.height * $index}}px">
+        <svg width="827">
+          <rect width="827" ng-attr-height="{{track.height}}" style="fill:{{track.color}}"></rect>
+          <circle cx="30" cy="33" r="1" fill="white"></circle>
         </svg>
-        <!--line and circle-->
-        <div style="position:absolute; left: 0px; top: 50px" class="ng-scope">
-          <svg style="position:absolute; left: -20px; top: 50px">
-            <circle cx="10" cy="10" r="10" fill="red"></circle>
-          </svg>
-          <svg style="position:absolute; left: -10px; top: 70px" height="200" width="1">
-            <line x1="0" y1="0" x2="0" y2="200" style="stroke:black;stroke-width:1"></line>
-          </svg>
-        </div>
-        <!--tracks-->
-        <div id="allTracks" style="position:absolute; left: 2.8px; top:-46.5px;">
-          <div ng-repeat="track in tracks" style="position:absolute; left: 0px; top:{{track.height * $index}}px">
-            <svg width="827">
-              <rect width="827" ng-attr-height="{{track.height}}" style="fill:{{track.color}}"></rect>
-              <circle cx="30" cy="33" r="1" fill="white"></circle>
-              <!-- for example here you can make some clips in the tracks -->
-              <rect ng-repeat="clips in track.clips"></rect>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!--rectangle presentation composition-->
-      <div style="position:absolute; left: -75px; top: 320px" class="ng-scope">
-        <svg width="910" height="110">
-          <rect width="910" height="60" style="fill:none;stroke-width:2;stroke:rgb(167, 157, 157)"></rect>
-        </svg>
-        <!--triangle black left for the presentation-->
-        <div style="position:absolute; left: 0px; top: 0px">
-          <svg style="position:absolute; left: 860px; top: 16px">
-            <polygon points="0,0 0,28 22,14" style="fill: rgb(62, 107, 145)"></polygon>
-          </svg>
-        </div>
-        <!-- title -->
-        <div style="position:absolute; left: 0px; top: 0px">
-          <svg height="80" width="600">
-            <text x="350" y="40" style="font-family: 'Arvo', serif; font-weight: bold" font-size="30" fill="rgb(62, 107, 145)">COMPOSITION</text>
-          </svg>
-        </div>
-        <!--triangleblack right for the button-->
-        <div style="position:absolute; left: 0px; top: 17px">
-          <svg style="position:absolute; left: 20px; top: 0px">
-            <polygon points="22,28 22,0 0,14" style="fill: rgb(62, 107, 145)"></polygon>
+        <!-- for example here you can make some clips in the tracks -->
+        <div ng-repeat="clip in track.clips">
+          <svg style="position:absolute; left: 0px; top: 0px">
+            <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}"
+              ng-attr-height="{{track.height}}">
+            </rect>
           </svg>
         </div>
       </div>
+    </div>
+  </div>
+  <!--line and circle-->
+  <div style="position:absolute; left: 120px; top: 0px" class="ng-scope">
+    <svg style="position:absolute; left: -20px; top: 50px">
+      <circle cx="10" cy="10" r="10" fill="red"></circle>
+    </svg>
+    <svg style="position:absolute; left: -10px; top: 70px" height="208" width="1">
+      <line x1="0" y1="0" x2="0" y2="230" style="stroke:black;stroke-width:1"></line>
+    </svg>
+  </div>
+</div>
+<!--rectangle presentation composition-->
+<div style="position:absolute; left: 100px; top: 400px" class="ng-scope">
+  <svg width="910" height="110">
+    <rect width="910" height="60" style="fill:none;stroke-width:2;stroke:rgb(167, 157, 157)"></rect>
+  </svg>
+  <!--triangle black left for the presentation-->
+  <div style="position:absolute; left: 0px; top: 0px">
+    <svg style="position:absolute; left: 860px; top: 16px">
+      <polygon points="0,0 0,28 22,14" style="fill: rgb(62, 107, 145)"></polygon>
+    </svg>
+  </div>
+  <!-- title -->
+  <div style="position:absolute; left: 0px; top: 0px">
+    <svg height="80" width="600">
+      <text x="350" y="40" style="font-family: 'Arvo', serif; font-weight: bold" font-size="30"
+        fill="rgb(62, 107, 145)">COMPOSITION</text>
+    </svg>
+  </div>
+  <!--triangleblack right for the button-->
+  <div style="position:absolute; left: 0px; top: 17px">
+    <svg style="position:absolute; left: 20px; top: 0px">
+      <polygon points="22,28 22,0 0,14" style="fill: rgb(62, 107, 145)"></polygon>
+    </svg>
+  </div>
+</div>
 
-      <!--title for parts-->
-      <div id="partsContainer" style="position:absolute; left: 10px; top: 80px" class="ng-scope">
-        
-        <div ng-repeat="part in parts">
-          <h4>{{part.name}}</h4>
-          <div ng-repeat="clip in part.clips">
-            <div>clip {{$index}}</div>
-          </div>
-        </div>
-        
-        <!--
+<!--tracks
+<div id="allTracks" style="position:absolute; left: 2.8px; top:5px;">
+    <div ng-repeat="track in tracks" style="position:absolute; left: 0px; top:{{track.height * $index}}px">
+      <svg width="827">
+        <rect width="827" ng-attr-height="{{track.height}}" style="fill:{{track.color}}"></rect>
+        <circle cx="30" cy="33" r="1" fill="white"></circle>
+      </svg>
+     for example here you can make some clips in the tracks -
+      <div ng-repeat="clip in track.clips">
+        <svg style="position:absolute; left: 0px; top: 0px">
+          <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}"
+            ng-attr-height="{{track.height}}">
+          </rect>
+          </svg>
+      </div>-->
+<!--title for parts-->
+<div id="partsContainer" style="position:absolute; left: 400px; top: 500px" class="ng-scope">
+  <div ng-repeat="part in parts" style="position:absolute; left: 0px; top:0">
+      <h4>{{part.name}}</h4>
+  </div>
+</div>
+
+<div id="partsContainer" style="position:absolute; left: 100px; top: 500px" class="ng-scope">
+  <div ng-repeat="part in parts">
+    <h4>{{part.name}}</h4>
+    <div ng-repeat="clip in part.clips">
+      <div>clip {{$index}}</div>
+    </div>
+  </div>
+</div>
+
+<!--
         <svg height="100" width="200">
           <text x="0" y="20" style="font-family: 'Arvo', serif" font-size="24" style="fill:rgb(123, 167, 202)">hoge strijkers
           </text>
         </svg>
       -->
-        <!-- clips within the track will go here with ng-repeat and we will use the position of the clip from the javascript-->
-        
-        <!--
+<!-- clips within the track will go here with ng-repeat and we will use the position of the clip from the javascript-->
+
+<!--
         <div ng-repeat="clip in track.clips" style="position:absolute; left: 4px; top: 30px;">
           <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}" ng-attr-height="{{track.height}}"></rect>
           </svg>
         </div>
       -->
-      </div>
+</div>
 
-    </div>
+</div>
 
 
 
-    <!--rectangle mp3-->
-    <!-- change -->
-    <div style="position:absolute; left: 0px; top: 100px" class="ng-scope">
-      <svg style="position:absolute; left: 0px; top: 0px">
-        <g>
-          <rect style="fill:lightskyblue" x="14" y="40" width="40" height="30"></rect>
-        </g>
-        <g>
-          <rect style="fill:lightskyblue" x="56" y="40" width="40" height="30"></rect>
-        </g>
-        <rect style="fill:lightskyblue" x="98" y="40" width="40" height="30"></rect>
-      </svg>
-    </div>
+<!--rectangle mp3-->
+<!-- change -->
+<div style="position:absolute; left: 0px; top: 100px" class="ng-scope">
+  <svg style="position:absolute; left: 0px; top: 0px">
+    <g>
+      <rect style="fill:lightskyblue" x="14" y="40" width="40" height="30"></rect>
+    </g>
+    <g>
+      <rect style="fill:lightskyblue" x="56" y="40" width="40" height="30"></rect>
+    </g>
+    <rect style="fill:lightskyblue" x="98" y="40" width="40" height="30"></rect>
+  </svg>
+</div>
