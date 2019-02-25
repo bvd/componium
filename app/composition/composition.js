@@ -71,38 +71,37 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
           position: 80,
           width: 27,
           color: "#FF0000"
+        }
+      ]
+    },
+    {
+      height: 34,
+      clips: [
+        {
+          position: 20,
+          width: 27,
+          color: "#00FF00"
         },
         {
-          height: 34,
-          clips: [
-            {
-              position: 20,
-              width: 27,
-              color: "#00FF00"
-            },
-            {
-              position: 80,
-              width: 27,
-              color: "#FF0000"
-            }
-          ]
+          position: 80,
+          width: 27,
+          color: "#FF0000"
+        }
+      ]
+    },
+    {
+      height: 34,
+      clips: [
+        {
+          position: 20,
+          width: 27,
+          color: "#00FF00"
         },
         {
-          height: 34,
-          clips: [
-            {
-              position: 20,
-              width: 27,
-              color: "#00FF00"
-            },
-            {
-              position: 80,
-              width: 27,
-              color: "#FF0000"
-            }
-          ]
-        },
-        //...etc
+          position: 80,
+          width: 27,
+          color: "#FF0000"
+        }
       ]
     }
   ];

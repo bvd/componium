@@ -56,6 +56,8 @@
               <svg width="827">
                 <rect width="827" ng-attr-height="{{track.height}}" style="fill:thistle"></rect>
                 <circle cx="30" cy="33" r="1" fill="white"></circle>
+                <!-- for example here you can make some clips in the tracks -->
+                <rect ng-repeat="clips in track.clips"></rect>
               </svg>
             </div>
 
