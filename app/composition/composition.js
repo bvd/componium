@@ -115,29 +115,9 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
   $scope.parts = [
     {
       name: "Percussion",
-      height:25,
-      font:"'Arvo', sherif",
-      color: "#9400D3",
+      position: "50px",
       margin: "20px",
       clips: [
-        {
-          position: 20,
-          height: 35,
-          width: 50,
-          color: "#D8BFD8"
-        },
-        {
-          position: 75,
-          height: 35,
-          width: 50,
-          color: "#D8BFD8"
-        },
-        {
-          position: 130,
-          height: 35,
-          width: 50,
-          color: "#D8BFD8"
-        },
         {
           position: 20,
           height: 35,
@@ -160,9 +140,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
     },
     {
       name: "Wood",
-      height:25,
-      font:"'Arvo', sherif",
-      color: "#9400D3",
+      position: "200px",
       margin: "20px",
       clips: [
         {
@@ -182,24 +160,6 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
           height: 35,
           width: 50,
           color: "#87CEFA"
-        },
-        {
-          position: 20,
-          height: 35,
-          width: 50,
-          color: "#D8BFD8"
-        },
-        {
-          position: 75,
-          height: 35,
-          width: 50,
-          color: "#D8BFD8"
-        },
-        {
-          position: 130,
-          height: 35,
-          width: 50,
-          color: "#D8BFD8"
         }
       ]
     }

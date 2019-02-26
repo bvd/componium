@@ -99,8 +99,8 @@
 </div>
 
  <!--Bocks-->
- <div id="partsContainer" style="position:absolute; left: 100px; top: 500px" class="ng-scope">
-  <div ng-repeat="part in parts" style="position:absolute; left:0px; top:{{part.height * $index}}px">
+ <div id="partsContainer" style="position:absolute; left: 200px; top: 500px" class="ng-scope">
+  <div ng-repeat="part in parts" style="position:absolute; left:0px; top:0px" ng-attr-x="{{part.position}}" y="0">
       <h4>{{part.name}}</h4>
       <div ng-repeat="clip in part.clips">
         <svg style="position:absolute; left: 0px; top: 50px">
@@ -108,6 +108,13 @@
             style="fill:{{clip.color}}">
           </rect>
         </svg>
+        <div ng-repeat="clip in part.clips">
+          <svg style="position:absolute; left: 0px; top: 90px">
+            <rect ng-attr-x="{{clip.position}}" y="0" ng-attr-height="{{clip.height}}" ng-attr-width="{{clip.width}}"
+              style="fill:{{clip.color}}">
+            </rect>
+          </svg>
+        </div>
       </div>
   </div>
 </div>
