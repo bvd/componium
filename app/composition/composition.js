@@ -12,8 +12,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 app.controller('compositionCtrl', ['$scope', function ($scope) {
 
   $scope.myName = "Bertus and Léticia are some wonderful person who love each other with big energy inside !!";
-  $scope.quantizePoints = 
-  
+
   $scope.tracks = [
     {
       height: 35,
@@ -115,45 +114,93 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
 
   $scope.parts = [
     {
-      name: "Wood",
-      size: 35,
-      color: "plum",
-      font: "'Arvo', serif",
+      name: "Percussion",
+      height:25,
+      font:"'Arvo', sherif",
+      color: "#9400D3",
       margin: "20px",
       clips: [
         {
-          position:"10",
-          width: "40px",
-          height: "30px",
-          color: "#87CEFA"
+          position: 20,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
         },
         {
-          position:"40",
-          width: "40px",
-          height: "30px",
-          color: "#87CEFA"
+          position: 75,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          position: 130,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          position: 20,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          position: 75,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          position: 130,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
         }
-        //... etc
       ]
     },
     {
-      name: "Brass",
-      size: 35,
-      color: "plum",
-      font: "'Arvo', serif",
-      margin:"20px",
+      name: "Wood",
+      height:25,
+      font:"'Arvo', sherif",
+      color: "#9400D3",
+      margin: "20px",
       clips: [
         {
-          width: "27px",
-          height: "60px",
-          color: "#FF0000"
+          position: 20,
+          height: 35,
+          width: 50,
+          color: "#87CEFA"
         },
         {
-          width: "27px",
-          height: "60px",
-          color: "#FF0000"
+          position: 75,
+          height: 35,
+          width: 50,
+          color: "#87CEFA"
+        },
+        {
+          position: 130,
+          height: 35,
+          width: 50,
+          color: "#87CEFA"
+        },
+        {
+          position: 20,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          position: 75,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          position: 130,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
         }
-        //... etc
       ]
     }
   ];
