@@ -1,29 +1,24 @@
-<p>{{myName}}</p>
-
-<!--muziek Lijst-->
+<!--music list button-->
 <div style="position:absolute;left: 0px;top: -100px;" class="ng-scope">
   <svg x="0" y="0" width="220" height="220">
-    <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z"
-      style="fill:rgb(230, 132, 35)"></path>
+    <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z" style="fill:rgb(230, 132, 35)"></path>
     <text x="90" y="182" style="font-family: 'Arvo', serif" font-size="14" fill="white">MUZIEK LIJST</text>
   </svg>
 </div>
 
-<!--OVER DEZE APPLICATE-->
+<!--about this application button-->
 <div ng-show="1" style="position:absolute; left: 900px; top: 22px" class="ng-scope">
   <svg x="0" y="0" width="220" height="220">
-    <path d="M40,30 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z"
-      style="fill:rgb(230, 132, 35)"></path>
+    <path d="M40,30 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z" style="fill:rgb(230, 132, 35)"></path>
     <text x="40" y="53" style="font-family: 'Arvo', serif" font-size="14" fill="white">OVER DEZE</text>
     <text x="40" y="72" style="font-family: 'Arvo', serif" font-size="14" fill="white">APPLICATE</text>
   </svg>
 </div>
 
-<!--tableau with tracks-->
+<!--area with tracks-->
 <div style="position:absolute;left: 100px;top: 80px;" class="ng-scope">
   <svg width="1200" height="440">
-    <path
-      d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z"
+    <path d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z"
       style="fill:rgb(123, 102, 168)"></path>
   </svg>
   <!-- button play/stop+triangle -->
@@ -54,8 +49,7 @@
         <!-- for example here you can make some clips in the tracks -->
         <div ng-repeat="clip in track.clips">
           <svg style="position:absolute; left: 0px; top: 0px">
-            <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}"
-              ng-attr-height="{{track.height}}">
+            <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}" ng-attr-height="{{track.height}}">
             </rect>
           </svg>
         </div>
@@ -72,7 +66,7 @@
     </svg>
   </div>
 </div>
-<!--rectangle presentation composition-->
+<!--scroll to choose other compositions-->
 <div style="position:absolute; left: 100px; top: 400px" class="ng-scope">
   <svg width="910" height="110">
     <rect width="910" height="60" style="fill:none;stroke-width:2;stroke:rgb(167, 157, 157)"></rect>
@@ -86,8 +80,7 @@
   <!-- title -->
   <div style="position:absolute; left: 0px; top: 0px">
     <svg height="80" width="600">
-      <text x="350" y="40" style="font-family: 'Arvo', serif; font-weight: bold" font-size="30"
-        fill="rgb(62, 107, 145)">COMPOSITION</text>
+      <text x="350" y="40" style="font-family: 'Arvo', serif; font-weight: bold" font-size="30" fill="rgb(62, 107, 145)">COMPOSITION</text>
     </svg>
   </div>
   <!--triangleblack right for the button-->
@@ -97,8 +90,28 @@
     </svg>
   </div>
 </div>
-<!--PARTS-->
-<div id="partsContainer" style="position:absolute; left: 200px; top: 500px" class="ng-scope">
+
+<!-- parts container (music material)-->
+<div style="position:absolute; left: 100px; top: 500px; width: 960px; height: 290px; background-color:aliceblue;">
+  <div ng-repeat="part in parts" style="left:{{part.x}}px; position:absolute; width:{{part.width}}px; height:{{part.height}}px;background-color:{{part.color}};">
+    <span style="position:absolute;left:{{part.name.position}}px;font-family:{{part.name.fontFamily}};font-size:{{part.name.fontSize}}px;color:{{part.name.color}};">{{part.name.text}}</span>
+    <!-- container for the clips within this particular part -->
+    <div style="position:absolute; top:20px; border-style: solid; width:{{part.width}}px;height:{{(part.height - 20)}}px;">
+      <div ng-repeat="clip in part.clips">
+        <svg style="position:absolute;">
+          <rect ng-attr-x="{{clip.x}}" ng-attr-y="{{clip.y}}" ng-attr-height="{{clip.height}}" ng-attr-width="{{clip.width}}" style="fill:{{clip.color}}">
+            <!-- circle -->
+              <!-- span for text A1 etc {{clip.tag}} -->
+            <!-- close circle -->
+          </rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--dedd
+  <div id="partsContainer" style="position:absolute; left: 200px; top: 500px" class="ng-scope">
   <div ng-repeat="part in parts">
     <div ng-repeat="name in part.names">
       <svg style="position:absolute; left:0px; top:0px">
@@ -137,7 +150,7 @@
     </div>
   </div>
 </div>
-</div>
+</div>-->
 
 <!--tracks
 <div id="allTracks" style="position:absolute; left: 2.8px; top:5px;">
@@ -177,6 +190,3 @@
       </div>
   </div>
 </div>-->
-</div>
-
-</div>

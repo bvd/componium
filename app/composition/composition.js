@@ -114,37 +114,201 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
 
   $scope.parts = [
     {
-      names: [
-        {
-          position: 50,
-          text: "Percussion",
-          style: "font-family: 'Arvo',sherif",
-          height: 30,
-          color: "#483D8B",
-        },
-        {
-          position: 200,
-          text: "Percussion",
-          style: "font-family: 'Arvo,sherif",
-          height: 30,
-          color: "#483D8B",
-        }
-      ],
+      x: 0,
+      width: 200,
+      height: 290,
+      color: "red",
+      name: {
+        position: 50,
+        text: "High Strings",
+        fontFamily: "'Arvo',sherif",
+        fontSize: 30,
+        color: "#483D8B",
+      },
       clips: [
         {
-          position: 20,
+          x: 0,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "A1"
+        },
+        {
+          x: 55,
+          y: 0,
           height: 35,
           width: 50,
           color: "#D8BFD8"
         },
         {
-          position: 75,
+          x: 110,
+          y: 0,
           height: 35,
           width: 50,
           color: "#D8BFD8"
         },
         {
-          position: 130,
+          x: 0,
+          y: 40,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 55,
+          y: 40,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 110,
+          y: 40,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        }
+      ]
+    },
+    {
+      x: 200,
+      width: 200,
+      height: 290,
+      color: "green",
+      name: {
+        position: 50,
+        text: "Wood",
+        fontFamily: "'Arvo',sherif",
+        fontSize: 30,
+        color: "#483D8B",
+      },
+      clips: [
+        {
+          x: 0,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 55,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 110,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        }
+      ]
+    },
+    {
+      x: 400,
+      width: 200,
+      height: 290,
+      color: "violet",
+      name: {
+        position: 50,
+        text: "Low Strings",
+        fontFamily: "'Arvo',sherif",
+        fontSize: 30,
+        color: "#483D8B",
+      },
+      clips: [
+        {
+          x: 0,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 55,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 110,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        }
+      ]
+    },
+    {
+      x: 600,
+      width: 200,
+      height: 290,
+      color: "turqoise",
+      name: {
+        position: 50,
+        text: "Brass",
+        fontFamily: "'Arvo',sherif",
+        fontSize: 30,
+        color: "#483D8B",
+      },
+      clips: [
+        {
+          x: 0,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 55,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 110,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        }
+      ]
+    },
+    {
+      x: 800,
+      width: 160,
+      height: 290,
+      color: "gray",
+      name: {
+        position: 50,
+        text: "Percussion",
+        fontFamily: "'Arvo',sherif",
+        fontSize: 30,
+        color: "#483D8B",
+      },
+      clips: [
+        {
+          x: 0,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 55,
+          y: 0,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8"
+        },
+        {
+          x: 110,
+          y: 0,
           height: 35,
           width: 50,
           color: "#D8BFD8"
