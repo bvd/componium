@@ -97,26 +97,46 @@
     </svg>
   </div>
 </div>
-
- <!--Bocks-->
- <div id="partsContainer" style="position:absolute; left: 200px; top: 500px" class="ng-scope">
-  <div ng-repeat="part in parts" style="position:absolute; left:0px; top:0px" ng-attr-x="{{part.position}}" y="0">
-      <h4>{{part.name}}</h4>
+<!--PARTS-->
+<div id="partsContainer" style="position:absolute; left: 200px; top: 500px" class="ng-scope">
+  <div ng-repeat="part in parts">
+    <div ng-repeat="name in part.names">
+      <svg style="position:absolute; left:0px; top:0px">
+        <text ng-attr-x="{{name.position}}" y="0" text="{{name.text}}" style="fill:{{name.style}}" ng-attr-height="{{name.height}}" style="fill:{{name.color}}">
+        </text>
+      </svg>
       <div ng-repeat="clip in part.clips">
-        <svg style="position:absolute; left: 0px; top: 50px">
+        <svg style="position:absolute; left: -50px; top: 50px">
           <rect ng-attr-x="{{clip.position}}" y="0" ng-attr-height="{{clip.height}}" ng-attr-width="{{clip.width}}"
             style="fill:{{clip.color}}">
           </rect>
         </svg>
         <div ng-repeat="clip in part.clips">
-          <svg style="position:absolute; left: 0px; top: 90px">
+          <svg style="position:absolute; left: -50px; top: 90px">
             <rect ng-attr-x="{{clip.position}}" y="0" ng-attr-height="{{clip.height}}" ng-attr-width="{{clip.width}}"
               style="fill:{{clip.color}}">
             </rect>
           </svg>
         </div>
       </div>
+        <div ng-repeat="clip in part.clips">
+          <svg style="position:absolute; left: 200px; top: 50px">
+            <rect ng-attr-x="{{clip.position}}" y="0" ng-attr-height="{{clip.height}}" ng-attr-width="{{clip.width}}"
+              style="fill:{{clip.color}}">
+            </rect>
+          </svg>
+          <div ng-repeat="clip in part.clips">
+            <svg style="position:absolute; left: 200px; top: 90px">
+              <rect ng-attr-x="{{clip.position}}" y="0" ng-attr-height="{{clip.height}}" ng-attr-width="{{clip.width}}"
+                style="fill:{{clip.color}}">
+              </rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 
 <!--tracks
