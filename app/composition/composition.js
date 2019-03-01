@@ -115,12 +115,12 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
   $scope.parts = [
     {
       x: 0,
-      width: 200,
+      width: 190,
       height: 290,
       color: "red",
       name: {
-        position: 50,
-        text: "High Strings",
+        position: 4,
+        text: "high Strings",
         fontFamily: "'Arvo',sherif",
         fontSize: 30,
         color: "#483D8B",
@@ -129,6 +129,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
           color: "#D8BFD8",
@@ -137,48 +138,58 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 55,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A2"
         },
         {
           x: 110,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A3"
         },
         {
           x: 0,
           y: 40,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "B1"
         },
         {
           x: 55,
           y: 40,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "B2"
         },
         {
           x: 110,
           y: 40,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "B3"
         }
       ]
     },
     {
-      x: 200,
-      width: 200,
+      x: 185,
+      width: 190,
       height: 290,
       color: "green",
       name: {
-        position: 50,
-        text: "Wood",
+        position: 60,
+        text: "wood",
         fontFamily: "'Arvo',sherif",
         fontSize: 30,
         color: "#483D8B",
@@ -187,34 +198,67 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A1"
         },
         {
           x: 55,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A2"
         },
         {
           x: 110,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A3"
+        },
+        {
+          x: 0,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B1"
+        },
+        {
+          x: 55,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B2"
+        },
+        {
+          x: 110,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B3"
         }
       ]
     },
     {
-      x: 400,
-      width: 200,
+      x: 375,
+      width: 190,
       height: 290,
       color: "violet",
       name: {
-        position: 50,
-        text: "Low Strings",
+        position: 12,
+        text: "low strings",
         fontFamily: "'Arvo',sherif",
         fontSize: 30,
         color: "#483D8B",
@@ -223,34 +267,67 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A1"
         },
         {
           x: 55,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A2"
         },
         {
           x: 110,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A3"
+        },
+        {
+          x: 0,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B1"
+        },
+        {
+          x: 55,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B2"
+        },
+        {
+          x: 110,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B3"
         }
       ]
     },
     {
-      x: 600,
-      width: 200,
+      x: 565,
+      width: 190,
       height: 290,
       color: "turqoise",
       name: {
         position: 50,
-        text: "Brass",
+        text: "brass",
         fontFamily: "'Arvo',sherif",
         fontSize: 30,
         color: "#483D8B",
@@ -259,34 +336,67 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A1"
         },
         {
           x: 55,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A2"
         },
         {
           x: 110,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A3"
+        },
+        {
+          x: 0,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B1"
+        },
+        {
+          x: 55,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B2"
+        },
+        {
+          x: 110,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B3"
         }
       ]
     },
     {
-      x: 800,
-      width: 160,
+      x: 755,
+      width: 190,
       height: 290,
       color: "gray",
       name: {
-        position: 50,
-        text: "Percussion",
+        position: 15,
+        text: "percussion",
         fontFamily: "'Arvo',sherif",
         fontSize: 30,
         color: "#483D8B",
@@ -295,23 +405,56 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A1"
         },
         {
           x: 55,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A2"
         },
         {
           x: 110,
           y: 0,
+          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8"
+          color: "#D8BFD8",
+          tag: "A3"
+        },
+        {
+          x: 0,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B1"
+        },
+        {
+          x: 55,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B2"
+        },
+        {
+          x: 110,
+          y: 40,
+          r: 7,
+          height: 35,
+          width: 50,
+          color: "#D8BFD8",
+          tag: "B3"
         }
       ]
     },
