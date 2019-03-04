@@ -13,13 +13,21 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
 
   $scope.myName = "Bertus and Léticia are some wonderful person who love each other with big energy inside !!";
 
+  $scope.quantizePoints = [0, 20, 40, 60];
+  for(var i = 0; i < 32; i++)
+  {
+    $scope.quantizePoints.push(i * 20);
+  };
+
+
   $scope.tracks = [
     {
       height: 35,
       color: "pink",
+      
       clips: [
         {
-          position: 20,
+          position: 110,
           width: 35,
           color: "#00FF00"
         },
@@ -35,7 +43,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       color: "plum",
       clips: [
         {
-          position: 20,
+          position: 160,
           width: 35,
           color: "#D8BFD8"
         },
@@ -51,7 +59,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       color: "pink",
       clips: [
         {
-          position: 20,
+          position: 110,
           width: 35,
           color: "#00FF00"
         },
@@ -67,7 +75,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       color: "plum",
       clips: [
         {
-          position: 0,
+          position: 180,
           width: 35,
           color: "#D8BFD8"
         },
@@ -83,7 +91,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       color: "pink",
       clips: [
         {
-          position: 5,
+          position: 150,
           width: 35,
           color: "#00FF00"
         },
@@ -99,7 +107,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       color: "plum",
       clips: [
         {
-          position: 10,
+          position: 140,
           width: 35,
           color: "#D8BFD8"
         },
