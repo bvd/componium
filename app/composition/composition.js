@@ -11,20 +11,10 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.controller('compositionCtrl', ['$scope', function ($scope) {
 
-  $scope.myName = "Bertus and Léticia are some wonderful person who love each other with big energy inside !!";
-
-  $scope.quantizePoints = [0, 20, 40, 60];
-  for(var i = 0; i < 32; i++)
-  {
-    $scope.quantizePoints.push(i * 20);
-  };
-
-
   $scope.tracks = [
     {
       height: 35,
       color: "pink",
-      
       clips: [
         {
           position: 110,
@@ -125,13 +115,12 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 0,
       width: 190,
       height: 290,
-      color: "red",
       name: {
-        position: 4,
+        position: 9,
         text: "high Strings",
         fontFamily: "'Arvo',sherif",
-        fontSize: 30,
-        color: "#483D8B",
+        fontSize: 28,
+        color: "#778899",
       },
       clips: [
         {
@@ -194,13 +183,12 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 185,
       width: 190,
       height: 290,
-      color: "green",
       name: {
-        position: 60,
+        position: 55,
         text: "wood",
         fontFamily: "'Arvo',sherif",
-        fontSize: 30,
-        color: "#483D8B",
+        fontSize: 28,
+        color: "#778899",
       },
       clips: [
         {
@@ -263,13 +251,12 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 375,
       width: 190,
       height: 290,
-      color: "violet",
       name: {
-        position: 12,
+        position: 15,
         text: "low strings",
         fontFamily: "'Arvo',sherif",
-        fontSize: 30,
-        color: "#483D8B",
+        fontSize: 28,
+        color: "#778899",
       },
       clips: [
         {
@@ -332,13 +319,12 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 565,
       width: 190,
       height: 290,
-      color: "turqoise",
       name: {
         position: 50,
         text: "brass",
         fontFamily: "'Arvo',sherif",
-        fontSize: 30,
-        color: "#483D8B",
+        fontSize: 28,
+        color: "#778899",
       },
       clips: [
         {
@@ -401,13 +387,12 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 755,
       width: 190,
       height: 290,
-      color: "gray",
       name: {
         position: 15,
         text: "percussion",
         fontFamily: "'Arvo',sherif",
-        fontSize: 30,
-        color: "#483D8B",
+        fontSize: 28,
+        color: "#778899",
       },
       clips: [
         {
