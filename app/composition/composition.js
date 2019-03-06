@@ -126,55 +126,49 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#87CEFA",
           tag: "A1"
         },
         {
           x: 55,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#87CEFA",
           tag: "A2"
         },
         {
           x: 110,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#87CEFA",
           tag: "A3"
         },
         {
           x: 0,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#87CEFA",
           tag: "B1"
         },
         {
           x: 55,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#87CEFA",
           tag: "B2"
         },
         {
           x: 110,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#87CEFA",
           tag: "B3"
         }
       ]
@@ -194,55 +188,49 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#00FF00",
           tag: "A1"
         },
         {
           x: 55,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#00FF00",
           tag: "A2"
         },
         {
           x: 110,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#00FF00",
           tag: "A3"
         },
         {
           x: 0,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#00FF00",
           tag: "B1"
         },
         {
           x: 55,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#00FF00",
           tag: "B2"
         },
         {
           x: 110,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#00FF00",
           tag: "B3"
         }
       ]
@@ -262,55 +250,49 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF00FF",
           tag: "A1"
         },
         {
           x: 55,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF00FF",
           tag: "A2"
         },
         {
           x: 110,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF00FF",
           tag: "A3"
         },
         {
           x: 0,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF00FF",
           tag: "B1"
         },
         {
           x: 55,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF00FF",
           tag: "B2"
         },
         {
           x: 110,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF00FF",
           tag: "B3"
         }
       ]
@@ -330,55 +312,49 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FFD700",
           tag: "A1"
         },
         {
           x: 55,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FFD700",
           tag: "A2"
         },
         {
           x: 110,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FFD700",
           tag: "A3"
         },
         {
           x: 0,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FFD700",
           tag: "B1"
         },
         {
           x: 55,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FFD700",
           tag: "B2"
         },
         {
           x: 110,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FFD700",
           tag: "B3"
         }
       ]
@@ -398,55 +374,49 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           x: 0,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF6347",
           tag: "A1"
         },
         {
           x: 55,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF6347",
           tag: "A2"
         },
         {
           x: 110,
           y: 0,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF6347",
           tag: "A3"
         },
         {
           x: 0,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF6347",
           tag: "B1"
         },
         {
           x: 55,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF6347",
           tag: "B2"
         },
         {
           x: 110,
           y: 40,
-          r: 7,
           height: 35,
           width: 50,
-          color: "#D8BFD8",
+          color: "#FF6347",
           tag: "B3"
         }
       ]
