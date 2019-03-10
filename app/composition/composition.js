@@ -11,6 +11,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.controller('compositionCtrl', ['$scope', function ($scope) {
 
+  $scope.quantizePoints = [0, 20, 40, 60]
+  for (var i = 0; i < 32; i++) {
+    $scope.quantizePoints.push(i * 20)
+  };
+
   $scope.tracks = [
     {
       height: 35,

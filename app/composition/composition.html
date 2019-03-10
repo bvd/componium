@@ -42,7 +42,7 @@
         <circle cx="27" cy="27" r="27" fill="red"></circle>
         <rect x="30" y="16" width="4" height="21" style="fill:white;"></rect>
       </svg>
-      <div style="position:absolute; left: 22px; top: 66.5px" class="ng-scope">
+      <div style="position:absolute; left: 22px; top: 66.5px">
         <svg style="position:absolute; left: 0px; top: 0px">
           <polygon points="16,0 16,21 0,10" style="fill:white"></polygon>
         </svg>
@@ -54,7 +54,7 @@
         <circle cx="27" cy="27" r="27" fill="red"></circle>
         <rect x="16" y="16" width="21" height="4" style="fill:white;"></rect>
       </svg>
-      <div style="position:absolute; left: 26px; top: 72px" class="ng-scope">
+      <div style="position:absolute; left: 26px; top: 72px">
         <svg style="position:absolute; left: 0px; top: 0px">
           <polygon points="21,0 0,0 10,17" style="fill:white"></polygon>
         </svg>
@@ -65,14 +65,14 @@
       <svg width="900" height="440">
         <rect width="833" height="215" style="fill:none;stroke-width:5;stroke:rgb(209, 198, 198)"></rect>
       </svg>
-      <!--tracks-->
+      <!--TRACKS-->
       <div id="allTracks" style="position:absolute; left: 2.7px; top:2.8px;">
         <div ng-repeat="track in tracks" style="position:absolute; left: 0px; top:{{track.height * $index}}px">
           <svg width="828">
             <rect width="828" ng-attr-height="{{track.height}}" style="fill:{{track.color}}"></rect>
-            <circle cx="30" cy="34" r="1" fill="white"></circle>
+            <circle cx="10" cy="34.5" r="1" fill="white"></circle>
           </svg>
-          <!-- for example here you can make some clips in the tracks -->
+          <!-- CLIPS in the tracks -->
           <div ng-repeat="clip in track.clips">
             <svg style="position:absolute; left: 0px; top: 0px">
               <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}"
@@ -125,15 +125,14 @@
       <span
         style="position:absolute;left:{{part.name.position}}px;font-family:{{part.name.fontFamily}};font-size:{{part.name.fontSize}}px;color:{{part.name.color}};">{{part.name.text}}</span>
       <!-- container for the clips + circle and tag within this particular part -->
-      <div
-        style="position:absolute; top:40px; width:{{part.width - 5}}px; height:{{(part.height - 50)}}px;">
+      <div style="position:absolute; top:40px; width:{{part.width - 5}}px; height:{{(part.height - 50)}}px;">
         <div ng-repeat="clip in part.clips">
           <svg style="position:absolute;left: 10px; top: 0px">
             <rect ng-attr-x="{{clip.x}}" ng-attr-y="{{clip.y}}" ng-attr-height="{{clip.height}}"
               ng-attr-width="{{clip.width}}" style="fill:{{clip.color}}"></rect>
-            <circle cx="36" cy="20" r="7" fill="grey"></circle>
+              <circle cx="36" cy="20" r="7" fill="grey"></circle>
             <text x="30" y="23" style="font-family: 'Arvo', serif" font-size="10" fill="white">{{clip.tag}}</text>
-          </svg>
+            </svg>
         </div>
       </div>
     </div>
@@ -141,3 +140,5 @@
 </div>
 </div>
 
+<!--<circle cx="36" cy="20" r="7" fill="grey"></circle>
+            <text x="30" y="23" style="font-family: 'Arvo', serif" font-size="10" fill="white">{{clip.tag}}</text>-->
