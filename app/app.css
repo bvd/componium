@@ -23,3 +23,44 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.allTracks{
+  display: flex;
+  flex-direction: column;
+}
+.track {
+  display: flex;
+  position: relative;
+}
+.clip{
+  position: absolute;
+}
+
+.partsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 960px;
+  height: 290px;
+  background-color:pink;
+}
+.partsContainer .part{
+  height: 290px;
+}
+.part .title{
+  position:relative;
+  line-height: 80px;
+  font-family:'Arvo',sherif;
+  font-size:28px;
+  color:#778899;
+}
+.clipsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.clip {
+  display: inline;
+}
+.clip text {
+  font-family: 'Arvo', serif
+}
