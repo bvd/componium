@@ -1,7 +1,7 @@
 <!--container all the page-->
 <div style="position:absolute; left: 4px; top: 0px; width: 960px; height: 1200px; border-style: solid">
   <!--music list button-->
-  <div style="position:absolute;left: -80px;top: -90px;" class="ng-scope">
+  <div style="position:absolute;left: -80px;top: -90px;">
     <svg x="0" y="0" width="220" height="220">
       <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z"
         style="fill:rgb(230, 132, 35)"></path>
@@ -666,22 +666,4 @@
   </div>
 </div>
 </body>
-<!--div id="allParts" style="position:absolute; left: 8px; top: 470px; width: 850px; height: 290px;">
-    <div ng-repeat="part in parts"
-      style="left:{{part.x}}px; position:absolute; width:{{part.width}}px; height:{{part.height}}px;">
-      <span
-        style="position:absolute;left:{{part.name.position}}px;font-family:{{part.name.fontFamily}};font-size:{{part.name.fontSize}}px;color:{{part.name.color}};">{{part.name.text}}</span>
-      <container for the clips + circle and tag within this particular part 
-      <div style="position:absolute; top:40px; width:{{part.width - 5}}px; height:{{(part.height - 50)}}px;">
-        <div ng-repeat="clip in part.clips">
-          <svg width="200" height="200" style="position:absolute; left: 10px; top: 0px">
-            <rect ng-attr-x="{{clip.x}}" ng-attr-y="{{clip.y}}" ng-attr-height="{{clip.height}}"
-              ng-attr-width="{{clip.width}}" style="fill:{{clip.color}}"></rect>
-            <circle style="position:absolute; left: 0px; top: 0px" cx="36" cy="20" r="7" fill="grey"></circle>
-            <text style="position:relative; left: 0px; top: 0px"x="30" y="23" style="font-family: 'Arvo', serif" font-size="10" fill="white">{{clip.tag}}</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>-->
 </div>
