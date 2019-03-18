@@ -14,20 +14,21 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
   $scope.numTracks = 6;
   $scope.trackHeight = 35;
   $scope.trackWidth = 828;
-  $scope.clipPosition1 = 80;
 
   $scope.tracks = [
     {
       color: "pink",
       clips: [
         {
-          position: 110,
+          position: 20,
           width: 35,
+          height: 35,
           color: "#00FF00"
         },
         {
           position: 80,
-          width: 27,
+          width: 35,
+          height: 35,
           color: "#D8BFD8"
         }
       ]
@@ -38,11 +39,13 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 160,
           width: 35,
+          height: 35,
           color: "#D8BFD8"
         },
         {
           position: 80,
-          width: 27,
+          width: 35,
+          height: 35,
           color: "#FF0000"
         }
       ]
@@ -53,11 +56,13 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 110,
           width: 35,
+          height: 35,
           color: "#00FF00"
         },
         {
-          position: 80,
-          width: 27,
+          position: 0,
+          width: 35,
+          height: 35,
           color: "#D8BFD8"
         },
       ]
@@ -68,11 +73,13 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 180,
           width: 35,
+          height: 35,
           color: "#D8BFD8"
         },
         {
-          position: 80,
-          width: 27,
+          position: 40,
+          width: 35,
+          height: 35,
           color: "#FF0000"
         }
       ]
@@ -83,11 +90,13 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 150,
           width: 35,
+          height: 35,
           color: "#00FF00"
         },
         {
           position: 80,
-          width: 27,
+          width: 35,
+          height: 35,
           color: "#D8BFD8"
         }
       ]
@@ -98,18 +107,31 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 140,
           width: 35,
+          height: 35,
           color: "#D8BFD8"
         },
         {
           position: 80,
-          width: 27,
+          width: 35,
+          height: 35,
           color: "#FF0000"
         }
       ]
     }
   ];
 
+  // the number of points can vary
+  // it's different for each music set
+  $scope.numberOfPoints = 13;
+  var distance = $scope.trackWidth / $scope.numberOfPoints;
+  $scope.pointPositions = [];
 
+  for (var i = 0; i < $scope.numberOfPoints; i++) {
+    var position = i * distance;
+    var rounded = Math.round(position);
+    $scope.pointPositions.push(rounded);
+  }
+  console.log($scope.pointPositions);
 
 
   $scope.parts = [
