@@ -11,6 +11,10 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.controller('compositionCtrl', ['$scope', function ($scope) {
 
+  $scope.message1= "MUZIEK LIST";
+  $scope.message2= "OVER DEZE";
+  $scope.message3= "APPLICATE";
+
   $scope.numTracks = 6;
   $scope.trackHeight = 35;
   $scope.trackWidth = 828;
@@ -22,13 +26,11 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 20,
           width: 35,
-          height: 35,
           color: "#00FF00"
         },
         {
           position: 80,
           width: 35,
-          height: 35,
           color: "#D8BFD8"
         }
       ]
@@ -39,13 +41,11 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 160,
           width: 35,
-          height: 35,
           color: "#D8BFD8"
         },
         {
           position: 80,
           width: 35,
-          height: 35,
           color: "#FF0000"
         }
       ]
@@ -56,13 +56,11 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 110,
           width: 35,
-          height: 35,
           color: "#00FF00"
         },
         {
           position: 0,
           width: 35,
-          height: 35,
           color: "#D8BFD8"
         },
       ]
@@ -73,13 +71,11 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 180,
           width: 35,
-          height: 35,
           color: "#D8BFD8"
         },
         {
           position: 40,
           width: 35,
-          height: 35,
           color: "#FF0000"
         }
       ]
@@ -90,13 +86,11 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 150,
           width: 35,
-          height: 35,
           color: "#00FF00"
         },
         {
           position: 80,
           width: 35,
-          height: 35,
           color: "#D8BFD8"
         }
       ]
@@ -107,13 +101,11 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
         {
           position: 140,
           width: 35,
-          height: 35,
           color: "#D8BFD8"
         },
         {
           position: 80,
           width: 35,
-          height: 35,
           color: "#FF0000"
         }
       ]
