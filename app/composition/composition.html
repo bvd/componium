@@ -1,20 +1,19 @@
 <!--container all the page-->
 <div style="position:absolute; left: 4px; top: 0px; width: 960px; height: 1200px; border-style: solid">
   <!--music list button-->
-  <div style="position:absolute;left: -80px;top: -90px;">
-    <svg width="220" height="220">
-      <path d="M80,150 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z"
-        style="fill:rgb(230, 132, 35)"></path>
-      <text x="90" y="182" style="font-family: 'Arvo', serif" font-size="14" fill="white">{{message1}}</text>
+  <div class="buttonContainer" style="position:absolute;left: 0px;top: 50px;">
+    <span class="buttonText" ng-bind-html="buttonText1"></span>
+    <svg width="132" height="56">
+      <path class="buttonBackground"
+        d="M0,0 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z" />
     </svg>
   </div>
-  <!--about this application button-->
-  <div style="position:absolute; left: 808px; top: 32px">
-    <svg  width="220" height="220">
-      <path d="M40,30 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z"
-        style="fill:rgb(230, 132, 35)"></path>
-      <text x="40" y="53" style="font-family: 'Arvo', serif" font-size="14" fill="white">{{message2}}</text>
-      <text x="40" y="72" style="font-family: 'Arvo', serif" font-size="14" fill="white">{{message3}}</text>
+  <div class="buttonContainer buttonContainerRight" style="position:absolute;top: 50px;">
+    <span class="buttonText" ng-bind-html="buttonText2"></span>
+    <svg width="132" height="56">
+      <path class="buttonBackground"
+        d="M20,00 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z">
+      </path>
     </svg>
   </div>
   <!--area with tracks-->
@@ -26,39 +25,27 @@
     </svg>
     <!-- BUTTON 1 play/stop+triangle -->
     <div style="position:absolute; left: 7px; top: 30px">
-      <svg style="position:absolute; left: 10px; top: 50px">
+      <svg style="position:absolute; left: 10px; top: 50px" width="60" height="60">
         <circle cx="27" cy="27" r="27" fill="red"></circle>
         <rect x="19" y="16" width="4" height="21" style="fill:white;"></rect>
-      </svg>
-      <div style="position:absolute; left: 35px; top: 66px" class="ng-scope">
-        <svg style="position:absolute; left: 0px; top: 0px">
           <polygon points="16,10 0,21 0,0" style="fill:white"></polygon>
         </svg>
-      </div>
     </div>
     <!-- BUTTON 2-->
     <div style="position:absolute; left: 7px; top: 95px">
-      <svg style="position:absolute; left: 10px; top: 50px">
+      <svg style="position:absolute; left: 10px; top: 50px" width="60" height="60">
         <circle cx="27" cy="27" r="27" fill="red"></circle>
         <rect x="30" y="16.5" width="4" height="21" style="fill:white;"></rect>
-      </svg>
-      <div style="position:absolute; left: 22px; top: 66.5px">
-        <svg style="position:absolute; left: 0px; top: 0px">
-          <polygon points="16,0 16,21 0,10" style="fill:white"></polygon>
+          <polygon x="30" y="18.5" points="16,0 16,21 0,10" style="fill:white"></polygon>
         </svg>
-      </div>
     </div>
     <!-- BUTTON 3-->
     <div style="position:absolute; left: 7px; top: 160px">
-      <svg style="position:absolute; left: 10px; top: 50px">
+      <svg style="position:absolute; left: 10px; top: 50px" width="60" height="60">
         <circle cx="27" cy="27" r="27" fill="red"></circle>
         <rect x="16" y="16" width="21" height="4" style="fill:white;"></rect>
-      </svg>
-      <div style="position:absolute; left: 26px; top: 72px">
-        <svg style="position:absolute; left: 0px; top: 0px">
-          <polygon points="21,0 0,0 10,17" style="fill:white"></polygon>
+          <polygon x="16" y="18" points="21,0 0,0 10,17" style="fill:white"></polygon>
         </svg>
-      </div>
     </div>
     <!--RECTANGLE FOR TRACKS-->
     <div ng-app style="position:absolute; left: 80px; top: 60px">
@@ -78,7 +65,7 @@
             <div class="clip" ng-repeat="clip in track.clips">
               <svg ng-attr-width="{{trackWidth}}" ng-attr-height="{{trackHeight}}">
                 <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}"
-                 ng-attr-height="{{trackHeight}}"></rect>
+                  ng-attr-height="{{trackHeight}}"></rect>
               </svg>
             </div>
           </div>
@@ -122,200 +109,32 @@
   </div>
 </div>
 <!-- PARTS container (music material)-->
-
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-</head>
-
-<body>
-  <div class="partsContainer" style="position:absolute; left: 8px; top: 470px; width: 940px; background-color:grey">
-
-    <!-- the first part -->
-    <div class="part" style="width:187px;background-color:pink;">
-      <span class="title" class="ng-binding" style="position:absolute; left: 8px; top:-15px">high Strings</span>
-      <div class="clipsContainer" style="max-width:190px">
-        <!-- the width is a property of the clip / it will later be calculated based on the duration -->
-        <div class="clip" style="width:50px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top:45px">
-            <rect style="fill:#87CEFA" height="35" width="50"></rect>
-            <circle cx="38" cy="23" r="7" fill="grey"></circle>
-            <text x="32" y="26" font-size="10" fill="white">A1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 27px; top:45px">
-            <rect style="fill:#87CEFA" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">A2</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top: 85px">
-            <rect style="fill:#87CEFA" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 42px; top: 85px">
-            <rect style="fill:#87CEFA" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B2</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-
-    <!-- the second part -->
-    <!-- the width will be a property of the part coming from the data center -->
-    <div class="part" style="width:187px;background-color:lightyellow;">
-      <span class="title" class="ng-binding" style="position:absolute; left: 230px; top:-15px">Wood</span>
-      <div class="clipsContainer" style="max-width:190px">
-        <!-- the width is a property of the clip / it will later be calculated based on the duration -->
-        <div class="clip" style="width:50px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top:45px">
-            <!-- the width can be from the exact same object / field as above-->
-            <!-- the height will be the track height -->
-            <!-- the color will come from the data -->
-            <rect style="fill:#00FF00" height="35" width="50"></rect>
-
-            <!-- the following for text and the circle                  -->
-            <!-- for the position you have to make some calculation     -->
-            <!-- based on some formula like "always some number smaller -->
-            <!-- than the clip height, always some number smaller than  -->
-            <!-- the clip width, etc                                    -->
-            <circle cx="38" cy="23" r="7" fill="grey"></circle>
-            <text x="32" y="26" font-size="10" fill="white">A1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 27px; top:45px">
-            <rect style="fill:#00FF00" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">A2</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top: 85px">
-            <rect style="fill:#00FF00" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 42px; top: 85px">
-            <rect style="fill:#00FF00" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B2</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div class="part" style="width:187px;background-color:lightgreen;">
-      <span class="title" class="ng-binding" style="position:absolute; left: 390px; top:-15px">Low Strings</span>
-      <div class="clipsContainer" style="max-width:190px">
-        <!-- the width is a property of the clip / it will later be calculated based on the duration -->
-        <div class="clip" style="width:50px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top:45px">
-            <rect style="fill:#FF00FF" height="35" width="50"></rect>
-            <circle cx="38" cy="23" r="7" fill="grey"></circle>
-            <text x="32" y="26" font-size="10" fill="white">A1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 27px; top:45px">
-            <rect style="fill:#FF00FF" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">A2</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top: 85px">
-            <rect style="fill:#FF00FF" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 42px; top: 85px">
-            <rect style="fill:#FF00FF" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B2</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div class="part" style="width:187px;background-color:rgb(235, 235, 197)">
-      <span class="title" class="ng-binding" style="position:absolute; left: 615px; top:-15px">Brass</span>
-      <div class="clipsContainer" style="max-width:190px">
-        <!-- the width is a property of the clip / it will later be calculated based on the duration -->
-        <div class="clip" style="width:50px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top:45px">
-            <rect style="fill:#FFD700" height="35" width="50"></rect>
-            <circle cx="38" cy="23" r="7" fill="grey"></circle>
-            <text x="32" y="26" font-size="10" fill="white">A1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 27px; top:45px">
-            <rect style="fill:#FFD700" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">A2</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top: 85px">
-            <rect style="fill:#FFD700" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 42px; top: 85px">
-            <rect style="fill:#FFD700" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B2</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div class="part" style="width:187px;background-color:pink;">
-      <span class="title" class="ng-binding" style="position:absolute; left: 770px; top:-15px">Percussion</span>
-      <div class="clipsContainer" style="max-width:190px">
-        <!-- the width is a property of the clip / it will later be calculated based on the duration -->
-        <div class="clip" style="width:50px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top:45px">
-            <rect style="fill:#FF6347" height="35" width="50"></rect>
-            <circle cx="38" cy="23" r="7" fill="grey"></circle>
-            <text x="32" y="26" font-size="10" fill="white">A1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 27px; top:45px">
-            <rect style="fill:#FF6347" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">A2</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: -40px; top: 85px">
-            <rect style="fill:#FF6347" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B1</text>
-          </svg>
-        </div>
-        <div class="clip" style="width:80px;height:35px;margin:1px;">
-          <svg style="position:absolute; left: 42px; top: 85px">
-            <rect style="fill:#FF6347" height="35" width="80"></rect>
-            <circle cx="68" cy="23" r="7" fill="grey"></circle>
-            <text x="62" y="26" font-size="10" fill="white" class="ng-binding">B2</text>
-          </svg>
-        </div>
+<div class="partsContainer" style="position:absolute; left: 15px; top: 470px; width: 940px; background-color:grey">
+  <div class="part" style="width:195px;background-color:{{part.color}};" ng-repeat="part in parts">
+    <!-- the text -->
+    <span class="title" class="ng-binding" style="left:{{part.name.position}}px; top:0px">{{part.name.text}}</span>
+    <!-- max-width should come from the same field as the width above -->
+    <div class="clipsContainer" style="max-width:195px;">
+      <!-- the width is a property of the clip -->
+      <!-- it will later be calculated based on the duration -->
+      <!-- for now you can take pixels -->
+      <div class="clip" style="width:50px;height:35px;margin:1px;" ng-repeat="clip in part.clips">
+        <svg>
+          <!-- the width can be from the exact same object / field as above-->
+          <!-- the height will be the track height -->
+          <!-- the color will come from the data -->
+          <rect style="fill:{{clip.color}}" ng-attr-width="{{clip.width}}" ng-attr-height="{{clip.height}}"></rect>
+          <!-- the following for text and the circle                  -->
+          <!-- for the position you have to make some calculation     -->
+          <!-- based on some formula like "always some number smaller -->
+          <!-- than the clip height, always some number smaller than  -->
+          <!-- the clip width, etc                                    -->
+          <circle cx="40" cy="25" r="7" fill="grey"></circle>
+          <text x="34" y="28" font-size="10" fill="white">{{clip.tag}}</text>
+        </svg>
       </div>
     </div>
   </div>
-  </div>
-  </div>
-</body>
 </div>
-
+</div>
+</div>

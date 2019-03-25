@@ -11,9 +11,8 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.controller('compositionCtrl', ['$scope', function ($scope) {
 
-  $scope.message1= "MUZIEK LIST";
-  $scope.message2= "OVER DEZE";
-  $scope.message3= "APPLICATE";
+  $scope.buttonText1 = 'MUZIEK LIJST';
+  $scope.buttonText2 = 'OVER DEZE<br/>APPLICATIE';
 
   $scope.numTracks = 6;
   $scope.trackHeight = 35;
@@ -131,12 +130,10 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 0,
       width: 190,
       height: 290,
+      color:"pink",
       name: {
         position: 9,
-        text: "high Strings",
-        fontFamily: "'Arvo',sherif",
-        fontSize: 28,
-        color: "#778899",
+        text: "High Strings",
       },
       clips: [
         {
@@ -193,12 +190,10 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 185,
       width: 190,
       height: 290,
+      color:"white",
       name: {
         position: 55,
-        text: "wood",
-        fontFamily: "'Arvo',sherif",
-        fontSize: 28,
-        color: "#778899",
+        text: "Wood",
       },
       clips: [
         {
@@ -255,57 +250,43 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 375,
       width: 190,
       height: 290,
+      color:"pink",
       name: {
         position: 15,
-        text: "low strings",
-        fontFamily: "'Arvo',sherif",
-        fontSize: 28,
-        color: "#778899",
+        text: "Low Strings",
       },
       clips: [
         {
-          x: 0,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FF00FF",
           tag: "A1"
         },
         {
-          x: 55,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FF00FF",
           tag: "A2"
         },
         {
-          x: 110,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FF00FF",
           tag: "A3"
         },
         {
-          x: 0,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FF00FF",
           tag: "B1"
         },
         {
-          x: 55,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FF00FF",
           tag: "B2"
         },
         {
-          x: 110,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FF00FF",
@@ -317,57 +298,43 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 565,
       width: 190,
       height: 290,
+      color: "white",
       name: {
         position: 50,
-        text: "brass",
-        fontFamily: "'Arvo',sherif",
-        fontSize: 28,
-        color: "#778899",
+        text: "Brass",
       },
       clips: [
         {
-          x: 0,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FFD700",
           tag: "A1"
         },
         {
-          x: 55,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FFD700",
           tag: "A2"
         },
         {
-          x: 110,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FFD700",
           tag: "A3"
         },
         {
-          x: 0,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FFD700",
           tag: "B1"
         },
         {
-          x: 55,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FFD700",
           tag: "B2"
         },
         {
-          x: 110,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FFD700",
@@ -379,57 +346,43 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 755,
       width: 190,
       height: 290,
+      color:"pink",
       name: {
         position: 15,
-        text: "percussion",
-        fontFamily: "'Arvo',sherif",
-        fontSize: 28,
-        color: "#778899",
+        text: "Percussion",
       },
       clips: [
         {
-          x: 0,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FF6347",
           tag: "A1"
         },
         {
-          x: 55,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FF6347",
           tag: "A2"
         },
         {
-          x: 110,
-          y: 0,
           height: 35,
           width: 50,
           color: "#FF6347",
           tag: "A3"
         },
         {
-          x: 0,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FF6347",
           tag: "B1"
         },
         {
-          x: 55,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FF6347",
           tag: "B2"
         },
         {
-          x: 110,
-          y: 40,
           height: 35,
           width: 50,
           color: "#FF6347",

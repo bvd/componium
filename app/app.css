@@ -1,4 +1,28 @@
 /* app css stylesheet */
+.buttonContainer {
+  position: absolute;
+  width: 132px;
+  height: 56px;
+}
+.buttonContainerRight {
+  left: 828px;
+}
+.buttonBackground {
+  fill: rgb(230, 132, 35);
+}
+.buttonText {
+  position: absolute;
+  text-align: center;
+  top:50%;
+  transform: translate(0, -50%);
+  width: 132px;
+  font-family:'Arvo',sherif;
+  font-size:14px;
+  color:white;
+}
+.buttonContainerRight .buttonText{
+  text-align: center;
+}
 
 .allTracks{
   display: flex;
@@ -8,10 +32,16 @@
   display: flex;
   position: relative;
 }
-.clip{
+.track .clip{
   position: absolute;
 }
 
+/**
+*
+* i've included things that I expect will NOT change in the CSS
+* (the other style things in the HTML are explained there)
+*
+*/
 .partsContainer {
   display: flex;
   justify-content: space-between;
@@ -23,8 +53,7 @@
   height: 290px;
 }
 .part .title{
-  position:relative;
-  line-height: 80px;
+  position: relative;
   font-family:'Arvo',sherif;
   font-size:28px;
   color:#778899;
@@ -34,7 +63,7 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-.clip {
+.clipsContainer .clip {
   display: inline;
 }
 .clip text {
