@@ -1,16 +1,16 @@
 /* app css stylesheet */
-.buttonContainer {
+.buttonMusicContainer {
   position: absolute;
   width: 132px;
   height: 56px;
 }
-.buttonContainerRight {
+.buttonMusicContainerRight {
   left: 828px;
 }
-.buttonBackground {
+.buttonMusicBackground {
   fill: rgb(230, 132, 35);
 }
-.buttonText {
+.buttonMusicText {
   position: absolute;
   text-align: center;
   top:50%;
@@ -20,8 +20,57 @@
   font-size:14px;
   color:white;
 }
-.buttonContainerRight .buttonText{
+.buttonMusicContainerRight .buttonText{
   text-align: center;
+}
+
+.buttonContainer {
+  position:absolute;
+  height: 54px;
+  width: 54px;
+}
+.buttonContainer svg {
+  position:absolute;
+  width:54px;
+  height:54px;
+}
+.buttonContainer2{
+  top:70px;
+}
+.buttonContainer3{
+  top:140px;
+}
+.triangle {
+  position:absolute;
+}
+.buttonsContainer {
+  position: absolute;
+  height:194px;
+  width:54px;
+}
+.visualizationHelper {
+  background-color:grey;
+}
+.triangle1 {
+    border-top: 10px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 13px solid white;
+    left:25px;
+    top:16px;
+}
+.triangle2 {
+    border-top: 11px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid white;
+    left:13px;
+    top:16px;
+}
+.triangle3 {
+  border-right: 10.5px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 16px solid white;
+  left:16px;
+  top:22px;
 }
 
 .allTracks{

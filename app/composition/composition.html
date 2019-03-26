@@ -1,17 +1,17 @@
 <!--container all the page-->
 <div style="position:absolute; left: 4px; top: 0px; width: 960px; height: 1200px; border-style: solid">
   <!--music list button-->
-  <div class="buttonContainer" style="position:absolute;left: 0px;top: 50px;">
-    <span class="buttonText" ng-bind-html="buttonText1"></span>
+  <div class="buttonMusicContainer" style="position:absolute;left: 0px;top: 50px;">
+    <span class="buttonMusicText" ng-bind-html="buttonText1"></span>
     <svg width="132" height="56">
-      <path class="buttonBackground"
+      <path class="buttonMusicBackground"
         d="M0,0 h112 a20,20 0 0 1 20,20 v16 a20,20 0 0 1 -20,20 h-112 , v-16 ,20 0 0 1 20,-20 z" />
     </svg>
   </div>
-  <div class="buttonContainer buttonContainerRight" style="position:absolute;top: 50px;">
-    <span class="buttonText" ng-bind-html="buttonText2"></span>
+  <div class="buttonMusicContainer buttonMusicContainerRight" style="position:absolute;top: 50px;">
+    <span class="buttonMusicText" ng-bind-html="buttonText2"></span>
     <svg width="132" height="56">
-      <path class="buttonBackground"
+      <path class="buttonMusicBackground"
         d="M20,00 h112 a0,0 0 0 1 0,20 v16 a0,0 0 0 1 -0,20 h-112 a20,20 0 0 1 -20,-20 v-16 a20,20 0 0 1 20,-20 z">
       </path>
     </svg>
@@ -23,32 +23,32 @@
         d="M20,50 h894 a20,20 0 0 1 20,20 v207 a20,20 0 0 1 -20,20 h-894 a20,20 0 0 1 -20,-20 v-207 a20,20 0 0 1 20,-20 z"
         style="fill:rgb(123, 102, 168)"></path>
     </svg>
-    <!-- BUTTON 1 play/stop+triangle -->
-    <div style="position:absolute; left: 7px; top: 30px">
-      <svg style="position:absolute; left: 10px; top: 50px" width="60" height="60">
-        <circle cx="27" cy="27" r="27" fill="red"></circle>
-        <rect x="19" y="16" width="4" height="21" style="fill:white;"></rect>
-          <polygon points="16,10 0,21 0,0" style="fill:white"></polygon>
+    <!-- BUTTONS PLAY AND STOP -->
+    <div class="buttonsContainer"style="position:absolute;left: 15px;top: 76px;">
+      <div class="buttonContainer">
+        <svg>
+            <circle cx="27" cy="27" r="27" fill="red"></circle>
+            <rect x="19" y="16" width="4" height="21" fill="white"></rect>
         </svg>
-    </div>
-    <!-- BUTTON 2-->
-    <div style="position:absolute; left: 7px; top: 95px">
-      <svg style="position:absolute; left: 10px; top: 50px" width="60" height="60">
-        <circle cx="27" cy="27" r="27" fill="red"></circle>
-        <rect x="30" y="16.5" width="4" height="21" style="fill:white;"></rect>
-          <polygon x="30" y="18.5" points="16,0 16,21 0,10" style="fill:white"></polygon>
-        </svg>
-    </div>
-    <!-- BUTTON 3-->
-    <div style="position:absolute; left: 7px; top: 160px">
-      <svg style="position:absolute; left: 10px; top: 50px" width="60" height="60">
-        <circle cx="27" cy="27" r="27" fill="red"></circle>
-        <rect x="16" y="16" width="21" height="4" style="fill:white;"></rect>
-          <polygon x="16" y="18" points="21,0 0,0 10,17" style="fill:white"></polygon>
-        </svg>
+        <div class="triangle triangle1"></div>
+      </div>
+      <div class="buttonContainer buttonContainer2">
+        <svg>
+            <circle cx="27" cy="27" r="27" fill="red"></circle>
+            <rect x="30" y="16.5" width="4" height="21" fill="white"></rect> 
+            </svg>
+        <div class="triangle triangle2"></div>
+      </div>
+      <div class="buttonContainer buttonContainer3">
+        <svg>
+            <circle  cx="27" cy="27" r="27" fill="red"></circle>
+            <rect x="16" y="16" width="21" height="4" fill="white"></rect>
+            </svg>
+        <div class="triangle triangle3"></div>
+      </div>
     </div>
     <!--RECTANGLE FOR TRACKS-->
-    <div ng-app style="position:absolute; left: 80px; top: 60px">
+    <div ng-app style="position:absolute; left: 80px; top: 65px">
       <div style="position:relative;" ng-controller="compositionCtrl">
         <svg ng-attr-width="{{trackWidth + 9}}" height="240">
           <rect ng-attr-width="{{trackWidth + 5}}" ng-attr-height="{{trackHeight * 6 + 5}}"
@@ -73,11 +73,11 @@
       </div>
       <!--line and circle-->
       <div style="position:absolute; left: 80px; top: -60px">
-        <svg style="position:absolute; left: -20px; top: 50px">
+        <svg style="position:absolute; left: -20px; top: 52px">
           <circle cx="10" cy="10" r="10" fill="red"></circle>
         </svg>
-        <svg style="position:absolute; left: -10px; top: 70px" height="208" width="1">
-          <line x1="0" y1="0" x2="0" y2="230" style="stroke:black;stroke-width:1"></line>
+        <svg style="position:absolute; left: -10px; top: 72px" height="208" width="1">
+          <line x1="0" y1="0" x2="0" y2="200" style="stroke:black;stroke-width:1"></line>
         </svg>
       </div>
     </div>
