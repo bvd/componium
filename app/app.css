@@ -1,16 +1,75 @@
 /* app css stylesheet */
-.buttonMusicContainer {
+/*rectangle with name and name of creation */
+.container  {
+  position:absolute;
+  top:10px;
+  left: 0px;
+  height: 20px;
+  width: 960px;
+}
+.rectangleContainer {
   position: absolute;
+  top: 0px;
+  width: 170px;
+  height: 20px;
+}
+.rectangleBackground {
+  fill: rgb(230, 132, 35);
+}
+.rectangleContainerLeft {
+  left: 40px;
+}
+.rectangleContainerRight {
+  left: 680px;
+}
+.rectangleText {
+  position: absolute;
+  text-align: center;
+  top:50%;
+  transform: translate(0, -50%);
+  width: 170px;
+  font-family:'Arvo',sherif;
+  font-size:12px;
+  color: white;
+}
+}
+.rectangleContainerRight .rectangleText{
+  text-align: center;
+}
+
+/* Button and Slogan */
+.textAndButtonOrangesContainer {
+  position:absolute;
+  height: 100px;
+  width: 960px;
+  text-align:center;
+}
+.textAndButtonOrangesContainer .text {
+  position:absolute;
+  line-height: 1.6;
+  width:696px;
+  left:132px;
+  top:5px;
+  font-family:'Arvo',sherif;
+  font-size:18px;
+  color:rgb(62, 107, 145);
+}
+.buttonOrangeContainer {
+  position: absolute;
+  top:50px;
   width: 132px;
   height: 56px;
 }
-.buttonMusicContainerRight {
+.buttonOrangeContainer1 {
+  left: 0px;
+}
+.buttonOrangeContainer2 {
   left: 828px;
 }
-.buttonMusicBackground {
+.buttonOrangeBackground {
   fill: rgb(230, 132, 35);
 }
-.buttonMusicText {
+.buttonOrangeText {
   position: absolute;
   text-align: center;
   top:50%;
@@ -20,10 +79,16 @@
   font-size:14px;
   color:white;
 }
-.buttonMusicContainerRight .buttonText{
+.buttonOrangeContainerRight .buttonOrangeText{
   text-align: center;
 }
 
+/* Button round Play and Stop */
+.buttonsContainer {
+  position: absolute;
+  height:194px;
+  width:54px;
+}
 .buttonContainer {
   position:absolute;
   height: 54px;
@@ -34,6 +99,9 @@
   width:54px;
   height:54px;
 }
+.buttonContainer1{
+  top:0px;
+}
 .buttonContainer2{
   top:70px;
 }
@@ -42,11 +110,6 @@
 }
 .triangle {
   position:absolute;
-}
-.buttonsContainer {
-  position: absolute;
-  height:194px;
-  width:54px;
 }
 .triangle1 {
     border-top: 10px solid transparent;
@@ -70,6 +133,7 @@
   top:22px;
 }
 
+/* Tracks and clip */
 .allTracks{
   display: flex;
   flex-direction: column;
@@ -88,6 +152,7 @@
 * (the other style things in the HTML are explained there)
 *
 */
+/* Parts and clip */
 .partsContainer {
   display: flex;
   justify-content: space-between;
@@ -114,4 +179,48 @@
 }
 .clip text {
   font-family: 'Arvo', serif
+}
+
+/* Scroll and Title Music */
+.scrollContainer{
+  position:absolute;
+  height: 60px;
+  width: 910px;
+}
+.visualizationHelper {
+  background-color:grey;
+}
+.triangle {
+  position:absolute;
+}
+.scrollContainer .triangle1 {
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 24px solid rgb(62, 107, 145);
+  left:26px;
+  top:14px;
+}
+.scrollContainer .triangle2 {
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 24px solid rgb(62, 107, 145);
+  left:860px;
+  top:14px;
+}
+.scrollTextContainer{
+  height: 60px;
+  width: 770px;
+  left: 70px;
+  position: absolute;
+  text-align:center;
+}
+.scrollContainer svg {
+  position:absolute;
+}
+.scrollText {
+  line-height:60px;
+  font-family:'Arvo',sherif;
+  font-weight:bold;
+  font-size:30px;
+  color:rgb(62, 107, 145);
 }

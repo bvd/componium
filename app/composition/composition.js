@@ -11,8 +11,12 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.controller('compositionCtrl', ['$scope', function ($scope) {
 
-  $scope.buttonText1 = 'MUZIEK LIJST';
-  $scope.buttonText2 = 'OVER DEZE<br/>APPLICATIE';
+  $scope.buttonOrangeText1 = 'MUZIEK LIJST';
+  $scope.buttonOrangeText2 = 'OVER DEZE<br/>APPLICATIE';
+  $scope.scrollText = 'TOUR DE FRANCE';
+  $scope.sloganText = 'Love and light<br/>the Love is all around, each moment of our life, inside and outside<br/>we just have to open our doors to let it in';
+  $scope.text2 ='Name : Wonder Woman';
+  $scope.text1 ='Composition : Spirit Birds';
 
   $scope.numTracks = 6;
   $scope.trackHeight = 35;
@@ -130,7 +134,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 0,
       width: 190,
       height: 290,
-      color:"pink",
+      color: "pink",
       name: {
         position: 9,
         text: "High Strings",
@@ -190,9 +194,9 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 185,
       width: 190,
       height: 290,
-      color:"white",
+      color: "white",
       name: {
-        position: 55,
+        position: 53,
         text: "Wood",
       },
       clips: [
@@ -250,7 +254,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 375,
       width: 190,
       height: 290,
-      color:"pink",
+      color: "pink",
       name: {
         position: 15,
         text: "Low Strings",
@@ -300,7 +304,7 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       height: 290,
       color: "white",
       name: {
-        position: 50,
+        position: 54,
         text: "Brass",
       },
       clips: [
@@ -346,9 +350,9 @@ app.controller('compositionCtrl', ['$scope', function ($scope) {
       x: 755,
       width: 190,
       height: 290,
-      color:"pink",
+      color: "pink",
       name: {
-        position: 15,
+        position: 17,
         text: "Percussion",
       },
       clips: [
