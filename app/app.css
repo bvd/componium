@@ -17,10 +17,10 @@
   fill: rgb(230, 132, 35);
 }
 .rectangleContainerLeft {
-  left: 40px;
+  left: 50px;
 }
 .rectangleContainerRight {
-  left: 680px;
+  left: 740px;
 }
 .rectangleText {
   position: absolute;
