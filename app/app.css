@@ -1,17 +1,24 @@
 /* app css stylesheet */
+
+/*SVG of the page*/
+.areaContainer {
+ position:absolute;
+ width:960px;
+ height:820px;
+}
+
 /*rectangle with name and name of creation */
 .container  {
   position:absolute;
-  top:10px;
+  top: 15px;
   left: 0px;
-  height: 20px;
+  height: 25px;
   width: 960px;
 }
 .rectangleContainer {
   position: absolute;
-  top: 0px;
   width: 170px;
-  height: 20px;
+  height: 25px;
 }
 .rectangleBackground {
   fill: rgb(230, 132, 35);
@@ -40,23 +47,27 @@
 /* Button and Slogan */
 .textAndButtonOrangesContainer {
   position:absolute;
-  height: 100px;
+  top: 40px;
+  left: 0px;
+  height: 92px;
   width: 960px;
   text-align:center;
 }
 .textAndButtonOrangesContainer .text {
   position:absolute;
   line-height: 1.6;
+  text-align: center;
+  top:50%;
+  transform: translate(0, -50%);
   width:696px;
   left:132px;
-  top:5px;
   font-family:'Arvo',sherif;
   font-size:18px;
   color:rgb(62, 107, 145);
 }
 .buttonOrangeContainer {
   position: absolute;
-  top:50px;
+  top:22px;
   width: 132px;
   height: 56px;
 }
@@ -83,9 +94,19 @@
   text-align: center;
 }
 
-/* Button round Play and Stop */
+/*AREA contain the button play/stop and Tracks */
+.areaButtonsAndTracksContainer {
+  position: absolute;
+  top: 130px;
+  left: 12px;
+  width: 935px;
+  height: 247px;
+}
+/* Button play/stop with triangle&rectangle */
 .buttonsContainer {
   position: absolute;
+  top: 25px;
+  left: 16px;
   height:194px;
   width:54px;
 }
@@ -100,12 +121,15 @@
   height:54px;
 }
 .buttonContainer1{
+  height:54px;
   top:0px;
 }
 .buttonContainer2{
+  height:54px;
   top:70px;
 }
 .buttonContainer3{
+  height:54px;
   top:140px;
 }
 .triangle {
@@ -134,6 +158,19 @@
 }
 
 /* Tracks and clip */
+.areaTracksContainer {
+  position:absolute;
+  top: 14px;
+  left: 80px;
+  height: 218px;
+  width: 833px;
+}
+.areaTracksContainer .circleAndLine {
+  position:absolute;
+  left:-10px;
+  width:20px;
+  height:220px;
+}
 .allTracks{
   display: flex;
   flex-direction: column;
@@ -186,9 +223,6 @@
   position:absolute;
   height: 60px;
   width: 910px;
-}
-.visualizationHelper {
-  background-color:grey;
 }
 .triangle {
   position:absolute;
