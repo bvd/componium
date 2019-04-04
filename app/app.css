@@ -105,8 +105,8 @@
 /* Button play/stop with triangle&rectangle */
 .buttonsContainer {
   position: absolute;
-  top: 25px;
-  left: 16px;
+  top: 26px;
+  left: 13px;
   height:194px;
   width:54px;
 }
@@ -160,20 +160,25 @@
 /* Tracks and clip */
 .areaTracksContainer {
   position:absolute;
-  top: 14px;
+  top: 12px;
   left: 80px;
   height: 218px;
   width: 833px;
+  border: 1px solid rgb(204, 194, 194);
 }
 .areaTracksContainer .circleAndLine {
   position:absolute;
-  left:-10px;
+  top: -6px;
+  left: 50px;
   width:20px;
   height:220px;
 }
 .allTracks{
+  position: absolute;
   display: flex;
   flex-direction: column;
+  top : 4px;
+  left : 3.8px;
 }
 .track {
   display: flex;
@@ -182,47 +187,59 @@
 .track .clip{
   position: absolute;
 }
+.clip text {
+  font-family: 'Arvo', serif
+}
 
-/**
-*
-* i've included things that I expect will NOT change in the CSS
-* (the other style things in the HTML are explained there)
-*
-*/
 /* Parts and clip */
 .partsContainer {
+  position: absolute;
+  top: 465px;
   display: flex;
   justify-content: space-between;
   width: 960px;
-  height: 290px;
+  height: 354px;
   background-color:pink;
 }
 .partsContainer .part{
-  height: 290px;
+  width: 192px;
+  height: 354px;
 }
 .part .title{
-  position: relative;
+  position: absolute;
+  text-align: center;
+  width: 192px;
   font-family:'Arvo',sherif;
   font-size:28px;
   color:#778899;
 }
 .clipsContainer {
+  position: absolute;
+  top: 40px;
+  width: 192px;
+  height: 315px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 .clipsContainer .clip {
-  display: inline;
+  position: relative;
+  width: 50px;
+  height: 35px;
+  margin: 1px;
 }
 .clip text {
   font-family: 'Arvo', serif
 }
 
 /* Scroll and Title Music */
-.scrollContainer{
+.scrollContainer {
   position:absolute;
+  top: 396px;
+  left: 23px;
   height: 60px;
   width: 910px;
+  border: 1px solid rgb(167, 157, 157);
 }
 .triangle {
   position:absolute;
@@ -241,20 +258,18 @@
   left:860px;
   top:14px;
 }
-.scrollTextContainer{
-  height: 60px;
-  width: 770px;
-  left: 70px;
+.scrollContainer .text2{
   position: absolute;
-  text-align:center;
-}
-.scrollContainer svg {
-  position:absolute;
-}
-.scrollText {
-  line-height:60px;
+  text-align: center;
+  width: 797.5px;
+  left: 63px;
+  top: 50%;
+  transform: translate(0, -50%);
   font-family:'Arvo',sherif;
   font-weight:bold;
   font-size:30px;
   color:rgb(62, 107, 145);
+}
+.scrollContainer svg {
+  position:absolute;
 }
