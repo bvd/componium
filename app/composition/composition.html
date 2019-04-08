@@ -66,10 +66,6 @@
       </div>
       <!--RECTANGLE FOR TRACKS-->
       <div class="areaTracksContainer">
-        <svg height="218" width="836">
-          <rect height="218" width="836">
-          </rect>
-        </svg>
         <!--TRACKS-->
         <div class="allTracks">
           <div class=" track" ng-repeat="track in tracks">
@@ -79,12 +75,12 @@
               <circle ng-repeat="point in pointPositions" ng-attr-cx="{{point}}" cy="0" r="1" fill="white"></circle>
             </svg>
             <!-- CLIPS in the tracks -->
-            <div class="clip" ng-repeat="clip in track.clips">
-              <svg ng-attr-width="{{trackWidth}}" ng-attr-height="{{trackHeight}}">
-                <rect style="fill:{{clip.color}}" ng-attr-x="{{clip.position}}" y="0" ng-attr-width="{{clip.width}}"
-                  ng-attr-height="{{trackHeight}}"></rect>
-                <circle cx="40" cy="25" r="7" fill="grey"></circle>
-                <text x="34" y="28" font-size="9" fill="white">{{clip.tag}}</text>
+            <div style="left:{{clip.position}}px" class="clip" ng-repeat="clip in track.clips">
+              <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{trackHeight}}">
+                <rect style="fill:{{clip.color}}" y="0" ng-attr-width="{{clip.width}}" ng-attr-height="{{trackHeight}}">
+                </rect>
+                <circle ng-attr-cx="{{clip.width-10}}" cy="25" r="7" fill="grey"></circle>
+                <text ng-attr-x="{{clip.width-16}}" y="28" font-size="9" fill="white">{{clip.tag}}</text>
               </svg>
             </div>
           </div>
@@ -93,7 +89,7 @@
         <div class="circleAndLine">
           <svg width="20" height="220">
             <circle cx="10" cy="10" r="10" fill="red"></circle>
-            <line class="h_line" x1="10" y1="20" x2="10" y2="220" style="stroke:black;stroke-width:1"></line>
+            <line x1="10" y1="20" x2="10" y2="220"></line>
           </svg>
         </div>
       </div>
@@ -106,29 +102,30 @@
     <div class="triangle triangle1"></div>
     <div class="triangle triangle2"></div>
   </div>
-  <!-- PARTS container (music material)-->
+  <!-- PARTS container (music material) // remove with possiblities to restore : background-color:{{part.color}}; in each part (<div class="part" style="...)-->
   <div class="partsContainer">
-    <div class="part" style="background-color:{{part.color}};" ng-repeat="part in parts">
+    <div class="part" style="width:{{part.width}}px" ng-repeat="part in parts">
       <!-- the text -->
-      <span class="title" class="ng-binding">{{part.name.text}}</span>
+      <span class="title" style="width:{{part.width}}px">{{part.name.text}}</span>
       <!-- max-width should come from the same field as the width above -->
-      <div class="clipsContainer">
+      <div class="clipsContainer" style="width:{{part.width}}px">
         <!-- the width is a property of the clip -->
         <!-- it will later be calculated based on the duration -->
         <!-- for now you can take pixels -->
-        <div class="clip" ng-repeat="clip in part.clips">
-          <svg width="50" height="35">
+        <div class="clip" ng-repeat="clip in part.clips"
+          style="width:{{clip.width}}px ; height:{{trackHeight}}px ; margin:{{marginBetweenClips}}px">
+          <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{trackHeight}}">
             <!-- the width can be from the exact same object / field as above-->
             <!-- the height will be the track height -->
             <!-- the color will come from the data -->
-            <rect class="clip" style="fill:{{clip.color}}"></rect>
+            <rect style="fill:{{clip.color}}" ng-attr-width="{{clip.width}}" ng-attr-height="{{clip.height}}"></rect>
             <!-- the following for text and the circle                  -->
             <!-- for the position you have to make some calculation     -->
             <!-- based on some formula like "always some number smaller -->
             <!-- than the clip height, always some number smaller than  -->
             <!-- the clip width, etc                                    -->
-            <circle cx="40" cy="25" r="7" fill="grey"></circle>
-            <text x="34" y="28" font-size="9" fill="white">{{clip.tag}}</text>
+            <circle ng-attr-cx="{{clip.width-10}}" cy="25" r="7" fill="grey"></circle>
+            <text ng-attr-x="{{clip.width-16}}" y="28" font-size="9" fill="white">{{clip.tag}}</text>
           </svg>
         </div>
       </div>
