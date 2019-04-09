@@ -8,42 +8,25 @@
 }
 
 /*rectangle with name and name of creation */
-.container  {
+.namesContainer  {
   position:absolute;
   top: 15px;
-  left: 0px;
+  left: 25px;
   height: 25px;
-  width: 960px;
+  width: 910px;
+  z-index: 1;
 }
-.rectangleContainer {
-  position: absolute;
-  width: 170px;
-  height: 25px;
-}
-.rectangleBackground {
-  fill: #ff7449;
-}
-.rectangleContainerLeft {
-  left: 50px;
-}
-.rectangleContainerRight {
-  left: 740px;
-}
-.rectangleText {
-  position: absolute;
-  text-align: center;
-  top:50%;
-  transform: translate(0, -50%);
-  width: 170px;
+.namesContainer span {
+  background-color: #FF7449;
   font-family:'Arvo',sherif;
   font-size:12px;
   color: white;
+  border-radius: 7px;
+  padding: 6px 20px;
 }
+.namesContainer span.right {
+  float: right;
 }
-.rectangleContainerRight .rectangleText{
-  text-align: center;
-}
-
 /* Button and Slogan */
 .textAndButtonOrangesContainer {
   position:absolute;
