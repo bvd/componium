@@ -12,7 +12,7 @@
   position:absolute;
   top: 15px;
   left: 25px;
-  height: 25px;
+  height: 28px;
   width: 910px;
   z-index: 1;
 }
@@ -23,6 +23,7 @@
   color: white;
   border-radius: 7px;
   padding: 6px 20px;
+  float: left;
 }
 .namesContainer span.right {
   float: right;
