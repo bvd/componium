@@ -151,10 +151,13 @@
 }
 .areaTracksContainer .circleAndLine {
   position:absolute;
-  top: -6px;
-  left: 50px;
-  width:20px;
-  height:220px;
+  width: 1px;
+  height: 210px;
+}
+.areaTracksContainer .circleAndLine svg {
+  left: -10px;
+  top: -10px;
+  position: relative;
 }
 .areaTracksContainer .circleAndLine svg line{
   stroke:black;
