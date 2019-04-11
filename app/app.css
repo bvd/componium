@@ -83,43 +83,6 @@
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-
-/*.buttonOrangeContainer {
-  position: absolute;
-  top:62px;
-  width: 132px;
-  height: 56px;
-}*/
-
-/*
-.buttonOrangeContainer1 {
-  left: 0px;
-}
-.buttonOrangeContainer2 {
-  left: 828px;
-}
-.buttonOrangeBackground {
-  fill:#ff7449;
-}
-*/
-
-/*
-.buttonOrangeText {
-  position: absolute;
-  text-align: center;
-  top:50%;
-  transform: translate(0, -50%);
-  width: 132px;
-  font-family:'Arvo',sherif;
-  font-size:14px;
-  color:white;
-}
-.buttonOrangeContainerRight .buttonOrangeText{
-  text-align: center;
-}
-*/
-
-
 /*AREA contain the button play/stop and Tracks */
 .areaButtonsAndTracksContainer {
   position: absolute;
