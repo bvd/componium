@@ -9,7 +9,14 @@ app.config(['$routeProvider', function ($routeProvider) {
   });
 }]);
 
-app.controller('compositionCtrl', ['$scope', function ($scope) {
+app.controller('compositionCtrl', [
+  '$scope',
+  'buttonsService',
+  'compositionService',
+  'partsService',
+  'playerService',
+  'scrollService',
+  function ($scope, buttonsService, compositionService, partsService, playerService, scrollService) {
 
   $scope.buttonOrangeText1 = 'MUZIEK LIJST';
   $scope.buttonOrangeText2 = 'OVER DEZE<br/>APPLICATIE';

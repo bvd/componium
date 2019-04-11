@@ -1,5 +1,4 @@
-angular.module('componiumApp').factory('playerService', function() {  
-    console.log("creating the playerService");
-	return {
+angular.module('componiumApp').factory('playerService',  ['storageService', function(storageService) {  
+    return {
 	};
-});
+}]);

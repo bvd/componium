@@ -1,5 +1,4 @@
-angular.module('componiumApp').factory('scrollService', function() {  
-    console.log("creating the scrollService");
-	return {
+angular.module('componiumApp').factory('scrollService',  ['storageService', function(storageService) {  
+    return {
 	};
-});
+}]);

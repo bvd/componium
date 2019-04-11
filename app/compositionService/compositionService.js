@@ -1,5 +1,4 @@
-angular.module('componiumApp').factory('compositionService', function() {  
-    console.log("creating the compositionService");
-	return {
+angular.module('componiumApp').factory('compositionService',  ['storageService', function(storageService) {  
+    return {
 	};
-});
+}]);
