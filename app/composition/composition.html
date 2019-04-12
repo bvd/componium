@@ -3,18 +3,18 @@
   <div class="areaContainer">
     <!--RECTANGLE BUTTON with name and noma creation from the participant-->
     <div class="namesContainer">
-      <span>{{text1}}</span>
-      <span class="right">{{text2}}</span>
+      <span ng-if="compositionData.compositionName">name: {{compositionData.compositionName}}</span>
+      <span ng-if="compositionData.composerName" class="right">by: {{compositionData.composerName}}</span>
     </div>
     <!--BUTTON Music list and SLOGAN-->
     <div class="textAndButtonOrangesContainer">
       <span class="text" ng-bind-html="sloganText"></span>
       <div class="buttonOrangeTextContainer">
-        <span class="buttonOrangeText">
-          <span ng-bind-html="buttonOrangeText1"></span>
+        <span ng-if="orangeButtonLeftData.text" class="buttonOrangeText">
+          <span ng-bind-html="orangeButtonLeftData.text"></span>
         </span>
-        <span class="buttonOrangeText right">
-          <span ng-bind-html="buttonOrangeText2"></span>
+        <span ng-if="orangeButtonRightData.text" class="buttonOrangeText right">
+          <span ng-bind-html="orangeButtonRightData.text"></span>
         </span>
       </div>
     </div>
