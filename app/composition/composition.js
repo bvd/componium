@@ -11,22 +11,27 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.controller('compositionCtrl', [
   '$scope',
-  'buttonsService',
-  'compositionService',
-  'partsService',
-  'playerService',
-  'scrollService',
-  function ($scope, buttonsService, compositionService, partsService, playerService, scrollService) {
+  'domainModel',
+  function ($scope, domainModel) {
 
     $scope.trackWidth = 826;
+    $scope.domainModel = domainModel;
+    domainModel.loadComposition('5969')
+      .then(loadCompositionSuccess, loadCompositionError);
 
-    // $scope.buttonOrangeText1 = 'MUZIEK LIJST';
-    // $scope.buttonOrangeText2 = 'OVER DEZE<br/>APPLICATIE';
-    $scope.orangeButtonLeftData = buttonsService.orangeButtonLeftData;
-    $scope.orangeButtonRightData = buttonsService.orangeButtonRightData;
+    function loadCompositionSuccess(){
+      console.log("loaded successfully");
+    }
+
+    function loadCompositionError(){
+      console.log("load error");
+    }
+
+    //$scope.orangeButtonLeftText = domainModel.buttonsData.orangeButtonLeftData.text;
+    //$scope.orangeButtonRightText = domainModel.buttonsData.orangeButtonRightData.text;
 
     // $scope.scrollText = 'TOUR DE FRANCE';
-    $scope.scrollData = scrollService.scrollData;
+    //$scope.scrollData = scrollService.scrollData;
 
     // $scope.sloganText = 'Love and light<br/>the Love is all around, each moment of our life, inside and outside<br/>we just have to open our doors to let it in';
     // $scope.text2 = 'Name : Wonder Woman';
@@ -151,7 +156,7 @@ app.controller('compositionCtrl', [
     //   $scope.pointPositions.push(rounded);
     // }
 
-    $scope.compositionData = compositionService.compositionData;
+    //$scope.compositionData = compositionService.compositionData;
 
     // $scope.marginBetweenClips = 1;
     // $scope.parts = [
@@ -725,8 +730,8 @@ app.controller('compositionCtrl', [
     //   },
     // ];
 
-    $scope.partsData = partsService.partsData;
+    //$scope.partsData = partsService.partsData;
 
-    compositionService.loadComposition();
+    //compositionService.loadComposition('5969');
 
   }]);

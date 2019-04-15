@@ -3,18 +3,18 @@
   <div class="areaContainer">
     <!--RECTANGLE BUTTON with name and noma creation from the participant-->
     <div class="namesContainer">
-      <span ng-if="compositionData.compositionName">name: {{compositionData.compositionName}}</span>
-      <span ng-if="compositionData.composerName" class="right">by: {{compositionData.composerName}}</span>
+      <span ng-if="compositionName">name: {{compositionData.compositionName}}</span>
+      <span ng-if="composerName" class="right">by: {{compositionData.composerName}}</span>
     </div>
     <!--BUTTON Music list and SLOGAN-->
     <div class="textAndButtonOrangesContainer">
       <span class="text" ng-bind-html="sloganText"></span>
       <div class="buttonOrangeTextContainer">
-        <span ng-if="orangeButtonLeftData.text" class="buttonOrangeText">
-          <span ng-bind-html="orangeButtonLeftData.text"></span>
+        <span ng-if="orangeButtonLeftText" class="buttonOrangeText">
+          <span ng-bind-html="orangeButtonLeftText"></span>
         </span>
-        <span ng-if="orangeButtonRightData.text" class="buttonOrangeText right">
-          <span ng-bind-html="orangeButtonRightData.text"></span>
+        <span ng-if="orangeButtonRightText" class="buttonOrangeText right">
+          <span ng-bind-html="orangeButtonRightText"></span>
         </span>
       </div>
     </div>
@@ -79,8 +79,8 @@
     </div>
   </div>
   <!--SCROLL to choose other compositions + TITLE and triangle-->
-  <div class="scrollContainer">
-    <span class="text2" ng-bind-html="scrollText"></span>
+  <div ng-if="domainModel.scrollData.items.length" class="scrollContainer">
+    <span class="text2" ng-bind-html="domainModel.scrollGetSelectedItemName()"></span>
     <!--triangle LEFT AND RIGT -->
     <div class="triangle triangle1"></div>
     <div class="triangle triangle2"></div>
