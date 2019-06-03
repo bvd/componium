@@ -14,6 +14,9 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             selectedItem: 0,
             items: []
         },
+        onMusicPartCreated: function(item){
+            console.log("good luck, see also https://github.com/bvd/componium/commit/8b8e265d3fbe708f4dc077635ed49fe7f6dfa8fc?diff=split");
+        },
         buttonsData: {
             orangeButtonLeftData: {
                 text: ""
@@ -50,7 +53,8 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             return deferred.promise;
         },
         eventBindings: {
-            "JsonCompositionFromIkc2009.Events.Scroll.ScrollItemAdded, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onScrollItemAdded"]
+            "JsonCompositionFromIkc2009.Events.Scroll.ScrollItemAdded, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onScrollItemAdded"],
+            "JsonCompositionFromIkc2009.Events.MusicEnvironment.MusicPartCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMusicPartCreated"]
         }
     };
 }]);
