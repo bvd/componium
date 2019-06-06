@@ -1,5 +1,9 @@
 angular.module('componiumApp').factory('domainModel', ['storageService', '$q', function (storageService, $q) {
     return {
+        
+        millisecondsToPixels: function(milliseconds){
+            return .0000000000000000000000000000000000000; // it is fake, we have to do this later when we implement the onTempoChanged and onZoomFactorChanged handlers we can complete this function
+        },
         onScrollItemAdded: function (item) {
             this.scrollData.items.push(
                 {
@@ -14,6 +18,10 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             selectedItem: 0,
             items: []
         },
+        onTrackHeightConfigured: function(item){
+            this.trackHeight = item.TrackHeight;
+        },
+        trackHeight: 0,
         onMusicPartCreated: function (item) {
             this.parts.push(
                 {
@@ -26,16 +34,32 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
                 });
             // console.log("good luck, see also https://github.com/bvd/componium/commit/8b8e265d3fbe708f4dc077635ed49fe7f6dfa8fc?diff=split");
         },
+
         parts: [],
-        onMusicClipCreated: function (item) {
-            this.clips.push(
-                {
-                    width: item.width,
-                    id: item.id,
-                    partid: item.partId,
-                });
+
+        onMusicClipCreated: function (musicClipCreatedEvent) {
+            
+            var calculatedWidth = this.millisecondsToPixels(musicClipCreatedEvent.exitpoint - musicClipCreatedEvent.entrypoint);
+            
+            var clip = {
+                width: calculatedWidth,
+                height: this.trackHeight,
+                color: musicClipCreatedEvent.color,
+                tag: musicClipCreatedEvent.tag
+            };
+
+            var relatedPartId = clip.partId;
+
+            for(var i = 0; i < this.parts.length; i++){
+                var iteratedPart = this.parts[i];
+                if(!iteratedPart.id == relatedPartId){
+                    continue;
+                }
+                var retrievedPart = iteratedPart;
+                retrievedPart.clips.push(clip);
+            }
+
         },
-        clips: [],
         buttonsData: {
             orangeButtonLeftData: {
                 text: ""
@@ -74,6 +98,7 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
         eventBindings: {
             "JsonCompositionFromIkc2009.Events.Scroll.ScrollItemAdded, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onScrollItemAdded"],
             "JsonCompositionFromIkc2009.Events.MusicEnvironment.MusicPartCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMusicPartCreated"],
+            "JsonCompositionFromIkc2009.Events.Config.TrackHeightConfigured, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onTrackHeightConfigured"],
             "JsonCompositionFromIkc2009.Events.MusicEnvironment.MusicClipCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMusicClipCreated"]
         }
     };
