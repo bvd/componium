@@ -2,7 +2,13 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
     return {
         
         millisecondsToPixels: function(milliseconds){
-            return .50; // it is fake, we have to do this later when we implement the onTempoChanged and onZoomFactorChanged handlers we can complete this function
+            var totalPixels = 820;
+            var millisecondsPerBeat = (60 * 1000) / this.bpmTempo;
+            var lengthInBeats = this.measureNumerator * this.zoomFactor;
+            var totalMilliseconds = millisecondsPerBeat * lengthInBeats;
+            var pixelsPerMillisecond = totalPixels / totalMilliseconds;
+            var width = pixelsPerMillisecond * milliseconds;
+            return width;
         },
         onScrollItemAdded: function (item) {
             this.scrollData.items.push(
@@ -86,10 +92,13 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
                     if (handlerNames) {
                         for (var ii = 0; ii < handlerNames.length; ii++) {
                             var fn = handlerNames[ii];
-                            that[fn](event);
+                            if(that.hasOwnProperty(fn) && typeof(that[fn] == "function"))
+                                that[fn](event);
+                            else
+                                console.error("function " + fn +  " does not exist!!") 
                         }
                     } else {
-                        console.log("no handler for the following event");
+                        console.log("no handler mapping found for the following event");
                         console.log(event);
                     }
                 }
