@@ -2,7 +2,7 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
     return {
         
         millisecondsToPixels: function(milliseconds){
-            return .0000000000000000000000000000000000000; // it is fake, we have to do this later when we implement the onTempoChanged and onZoomFactorChanged handlers we can complete this function
+            return .50; // it is fake, we have to do this later when we implement the onTempoChanged and onZoomFactorChanged handlers we can complete this function
         },
         onScrollItemAdded: function (item) {
             this.scrollData.items.push(
@@ -18,18 +18,18 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             selectedItem: 0,
             items: []
         },
-        onTrackHeightConfigured: function(item){
-            this.trackHeight = item.TrackHeight;
+        onTrackHeightConfigured: function(TrackHeightConfiguredEvent){
+            this.trackHeight = TrackHeightConfiguredEvent.TrackHeight;
         },
         trackHeight: 0,
-        onMusicPartCreated: function (item) {
+        onMusicPartCreated: function (MusicPartCreatedEvent) {
             this.parts.push(
                 {
-                    width: item.width,
+                    width: MusicPartCreatedEvent.width,
                     name: {
-                        text: item.name
+                        text: MusicPartCreatedEvent.name
                     },
-                    id: item.id,
+                    id: MusicPartCreatedEvent.id,
                     clips: []
                 });
             // console.log("good luck, see also https://github.com/bvd/componium/commit/8b8e265d3fbe708f4dc077635ed49fe7f6dfa8fc?diff=split");
@@ -60,6 +60,10 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             }
 
         },
+        onTempoDefined: function(TempoDefinedEvent){
+            this.bpmTempo = TempoDefinedEvent.bpmTempo;
+        },
+        bpmTempo: 0,
         buttonsData: {
             orangeButtonLeftData: {
                 text: ""
@@ -99,6 +103,9 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             "JsonCompositionFromIkc2009.Events.Scroll.ScrollItemAdded, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onScrollItemAdded"],
             "JsonCompositionFromIkc2009.Events.MusicEnvironment.MusicPartCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMusicPartCreated"],
             "JsonCompositionFromIkc2009.Events.Config.TrackHeightConfigured, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onTrackHeightConfigured"],
+            "JsonCompositionFromIkc2009.Events.MusicEnvironment.TempoDefined, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onTempoDefined"],
+            "JsonCompositionFromIkc2009.Events.Config.ZoomFactorChange, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onZoomFactorChange"],
+            "JsonCompositionFromIkc2009.Events.Config.QuantizeGridChange, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onQuantizeGridChange"],
             "JsonCompositionFromIkc2009.Events.MusicEnvironment.MusicClipCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMusicClipCreated"]
         }
     };
