@@ -15,7 +15,19 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             items: []
         },
         onMusicPartCreated: function(item){
-            console.log("good luck, see also https://github.com/bvd/componium/commit/8b8e265d3fbe708f4dc077635ed49fe7f6dfa8fc?diff=split");
+            this.partData.items.push(
+                {
+                    name: item.Name, 
+                    id: item.Id
+                });
+            // console.log("good luck, see also https://github.com/bvd/componium/commit/8b8e265d3fbe708f4dc077635ed49fe7f6dfa8fc?diff=split");
+        },
+        partGetSelectedItemName: function(){
+            return this.partData.items[this.partData.selectedItem].name;
+        },
+        partData: {
+            selectedItem: 0,
+            items: []
         },
         buttonsData: {
             orangeButtonLeftData: {
