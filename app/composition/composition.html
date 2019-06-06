@@ -87,7 +87,7 @@
   </div>
   <!-- PARTS container (music material) // remove with possiblities to restore : background-color:{{part.color}}; in each part (<div class="part" style="...)-->
   <div  ng-if="domainModel.partData.items.length" class="partsContainer">
-    <div class="part" style="width:{{part.width}}px" ng-repeat="part in domainModel.parts">
+    <div class="part" style="width:{{part.width}}px" ng-repeat="part in domainModel.partData.items">
       <!-- the text -->
       <span class="title" ng-bind-html="domainModel.partGetSelectedItemName()"></span> <!--I keep the old creation, in any case !... style="width:{{part.width}}px">{{part.name.text}}-->
       <!-- max-width should come from the same field as the width above -->

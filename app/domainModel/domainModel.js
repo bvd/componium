@@ -17,8 +17,11 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
         onMusicPartCreated: function(item){
             this.partData.items.push(
                 {
-                    name: item.Name, 
-                    id: item.Id
+                    width: "look in the debugger what is inside the item",
+                    name: {
+                        text: "look in the debugger what is inside the item"
+                    },
+                    id: "look in the debugger what is inside the item"
                 });
             // console.log("good luck, see also https://github.com/bvd/componium/commit/8b8e265d3fbe708f4dc077635ed49fe7f6dfa8fc?diff=split");
         },
