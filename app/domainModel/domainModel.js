@@ -15,23 +15,18 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             items: []
         },
         onMusicPartCreated: function(item){
-            this.partData.items.push(
+            this.parts.push(
                 {
-                    width: "look in the debugger what is inside the item",
+                    width: item.width,
                     name: {
-                        text: "look in the debugger what is inside the item"
+                        text: item.name
                     },
-                    id: "look in the debugger what is inside the item"
+                    id: item.id,
+                    clips: []
                 });
             // console.log("good luck, see also https://github.com/bvd/componium/commit/8b8e265d3fbe708f4dc077635ed49fe7f6dfa8fc?diff=split");
         },
-        partGetSelectedItemName: function(){
-            return this.partData.items[this.partData.selectedItem].name;
-        },
-        partData: {
-            selectedItem: 0,
-            items: []
-        },
+        parts: [],
         buttonsData: {
             orangeButtonLeftData: {
                 text: ""
