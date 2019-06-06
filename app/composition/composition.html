@@ -95,7 +95,7 @@
         <!-- the width is a property of the clip -->
         <!-- it will later be calculated based on the duration -->
         <!-- for now you can take pixels -->
-        <div class="clip" ng-repeat="clip in part.clips"
+        <div class="clip" ng-repeat="clip in domainModel.clips"
           style="width:{{clip.width}}px ; height:{{trackHeight}}px ; margin:{{marginBetweenClips}}px">
           <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{trackHeight}}">
             <!-- the width can be from the exact same object / field as above-->
