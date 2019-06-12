@@ -80,10 +80,10 @@
   </div>
   <!--SCROLL to choose other compositions + TITLE and triangle-->
   <div ng-if="domainModel.scrollData.items.length" class="scrollContainer">
-    <span class="text2" ng-bind-html="domainModel.scrollGetSelectedItemName()"></span>
+    <span class="text2" ng-bind-html="domainModel.scrollGetSelectedItemName()" ng-click="onScrollItemClicked()"></span>
     <!--triangle LEFT AND RIGT -->
-    <div class="triangle triangle1"></div>
-    <div class="triangle triangle2"></div>
+    <div class="triangle triangle1" ng-click="onLeftScrollArrowClick()"></div>
+    <div class="triangle triangle2" ng-click="onRightScrollArrowClick()"></div>
   </div>
   <!-- PARTS container (music material) // remove with possiblities to restore : background-color:{{part.color}}; in each part (<div class="part" style="...)-->
   <div  ng-if="domainModel.parts.length" class="partsContainer">
@@ -96,8 +96,8 @@
         <!-- it will later be calculated based on the duration -->
         <!-- for now you can take pixels -->
         <div class="clip" ng-repeat="clip in part.clips"
-          style="width:{{clip.width}}px ; height:{{trackHeight}}px ; margin:{{marginBetweenClips}}px">
-          <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{trackHeight}}">
+          style="width:{{clip.width}}px ; height:{{domainModel.trackHeight}}px; margin: {{part.marginY}}px {{part.marginX}}px;">
+          <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{domainModel.trackHeight}}">
             <!-- the width can be from the exact same object / field as above-->
             <!-- the height will be the track height -->
             <!-- the color will come from the data -->

@@ -1225,7 +1225,7 @@
 			}, {
 				"Type": "JsonCompositionFromIkc2009.Events.Composition.CompositionCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
 				"Name": "Beethoven Easy",
-				"Id": 5969,
+				"Id": "5969",
 				"Time": 1366702964,
 				"User": 15290,
 				"UserName": null,
@@ -1247,7 +1247,7 @@
 					}else{
 						deferred.reject("Error retrieving the composition data!");
 					}
-				}, 5000);
+				}, 500);
 
 				return deferred.promise;
 		}

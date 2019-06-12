@@ -27,6 +27,29 @@ app.controller('compositionCtrl', [
       console.log("load error");
     }
 
+    $scope.onLeftScrollArrowClick = function(){
+      if($scope.domainModel.scrollData.selectedItem == 0){
+        $scope.domainModel.scrollData.selectedItem = $scope.domainModel.scrollData.items.length -1;
+      }
+      else{
+        $scope.domainModel.scrollData.selectedItem -= 1;
+      }
+    }
+
+    $scope.onRightScrollArrowClick = function(){
+      if($scope.domainModel.scrollData.selectedItem == $scope.domainModel.scrollData.items.length -1){
+        $scope.domainModel.scrollData.selectedItem = 0;
+      }
+      else{
+        $scope.domainModel.scrollData.selectedItem += 1;
+      }
+    }
+
+    $scope.onScrollItemClicked = function(){
+      domainModel.loadComposition(domainModel.scrollData.items[domainModel.scrollData.selectedItem].id)
+        .then(loadCompositionSuccess, loadCompositionError);
+    }
+
     //$scope.orangeButtonLeftText = domainModel.buttonsData.orangeButtonLeftData.text;
     //$scope.orangeButtonRightText = domainModel.buttonsData.orangeButtonRightData.text;
 

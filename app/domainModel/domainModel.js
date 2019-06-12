@@ -13,8 +13,8 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
         onScrollItemAdded: function (item) {
             this.scrollData.items.push(
                 {
-                    Name: CompositionCreatedEvent.Name,
-                    id: CompositionCreatedEvent.Id
+                    name: item.Name,
+                    id: item.Id
                 });
         },
         scrollGetSelectedItemName: function () {
@@ -25,9 +25,18 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             items: []
         },
         onCompositionCreated: function (CompositionCreatedEvent) {
-            this.NameComposition = CompositionCreatedEvent.Name;
+            this.composition.name = CompositionCreatedEvent.Name;
+            this.composition.id = CompositionCreatedEvent.Id;
+            this.scrollData.items.push({
+                name: this.composition.name,
+                id: this.composition.id
+            });
+            this.scrollData.selectedItem = this.scrollData.items.length - 1;
         },
-        NameComposition: 0,
+        composition: {
+            id: 0,
+            name: ""
+        },
         onTrackHeightConfigured: function (TrackHeightConfiguredEvent) {
             this.trackHeight = TrackHeightConfiguredEvent.TrackHeight;
         },
@@ -59,6 +68,7 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
                 height: this.trackHeight,
                 color: musicClipCreatedEvent.color,
                 tag: musicClipCreatedEvent.tag
+                // icon
             };
 
             var relatedPartId = musicClipCreatedEvent.partId;
@@ -105,6 +115,9 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             compositionName: "",
             composerName: ""
         },
+        onMusicSetCreated: function(MusicSetCreatedEvent) {
+            this.parts = [];
+        },
         loadComposition: function (id) {
             var deferred = $q.defer();
             var that = this;
@@ -141,7 +154,8 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             "JsonCompositionFromIkc2009.Events.Config.ZoomFactorChange, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onZoomFactorChange"],
             "JsonCompositionFromIkc2009.Events.Config.QuantizeGridChange, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onQuantizeGridChange"],
             "JsonCompositionFromIkc2009.Events.MusicEnvironment.MeasureDefined, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMeasureDefined"],
-            "JsonCompositionFromIkc2009.Events.MusicEnvironment.MusicClipCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMusicClipCreated"]
+            "JsonCompositionFromIkc2009.Events.MusicEnvironment.MusicClipCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMusicClipCreated"],
+            "JsonCompositionFromIkc2009.Events.Composition.ClearCompositionEvent, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onClearComposition"]
         }
     };
 }]);
