@@ -70,6 +70,14 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             this.bpmTempo = TempoDefinedEvent.bpmTempo;
         },
         bpmTempo: 0,
+        onZoomFactorChange: function (ZoomFactorChangeEvent){
+            this.zoomFactor = ZoomFactorChangeEvent.zoomFactor;
+        },
+        zommFactor : 0,
+        onQuantizeGridChange: function (QuantizeGridChangeEvent){
+            this.quantizeGrid = QuantizeGridChangeEvent.quantizeGrid;
+        },
+        quantizeGrid : 0,
         buttonsData: {
             orangeButtonLeftData: {
                 text: ""
