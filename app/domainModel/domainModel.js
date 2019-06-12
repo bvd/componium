@@ -3,8 +3,8 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
         
         millisecondsToPixels: function(milliseconds){
             var totalPixels = 820;
-            var millisecondsPerBeat = (60 * 1000) / this.bpmTempo;
-            var lengthInBeats = this.measureNumerator * this.zoomFactor;
+            var millisecondsPerBeat = (60 * 1000) / this.BpmTempo;
+            var lengthInBeats = this.NumeratorMeasure * this.DenominatorZoom;
             var totalMilliseconds = millisecondsPerBeat * lengthInBeats;
             var pixelsPerMillisecond = totalPixels / totalMilliseconds;
             var width = pixelsPerMillisecond * milliseconds;
@@ -67,17 +67,25 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
 
         },
         onTempoDefined: function(TempoDefinedEvent){
-            this.bpmTempo = TempoDefinedEvent.bpmTempo;
+            this.BpmTempo = TempoDefinedEvent.BpmTempo;
         },
-        bpmTempo: 0,
+        BpmTempo: 0,
+        onMeasureDefined: function(MeasureDefinedEvent){
+            this.DenominatorMeasure = MeasureDefinedEvent.Denominator;
+            this.NumeratorMeasure = MeasureDefinedEvent.Numerator;
+        },
+        DenominatorMeasure: 0,
+        NumeratorMeasure: 0,
         onZoomFactorChange: function (ZoomFactorChangeEvent){
-            this.zoomFactor = ZoomFactorChangeEvent.zoomFactor;
+            this.DenominatorZoom = ZoomFactorChangeEvent.Denominator;
         },
-        zommFactor : 0,
+        DenominatorZoom : 0,
         onQuantizeGridChange: function (QuantizeGridChangeEvent){
-            this.quantizeGrid = QuantizeGridChangeEvent.quantizeGrid;
+            this.DenominatorQuantize = QuantizeGridChangeEvent.Denominator;
+            this.NumeratorQuantize = QuantizeGridChangeEvent.Numerator;
         },
-        quantizeGrid : 0,
+        DenominatorQuantize : 0,
+        NumeratorQuantize : 0,
         buttonsData: {
             orangeButtonLeftData: {
                 text: ""
@@ -123,6 +131,7 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
             "JsonCompositionFromIkc2009.Events.MusicEnvironment.TempoDefined, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onTempoDefined"],
             "JsonCompositionFromIkc2009.Events.Config.ZoomFactorChange, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onZoomFactorChange"],
             "JsonCompositionFromIkc2009.Events.Config.QuantizeGridChange, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onQuantizeGridChange"],
+            "JsonCompositionFromIkc2009.Events.MusicEnvironment.MeasureDefined, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null":["onMeasureDefined"],
             "JsonCompositionFromIkc2009.Events.MusicEnvironment.MusicClipCreated, JsonCompositionFromIkc2009, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": ["onMusicClipCreated"]
         }
     };
