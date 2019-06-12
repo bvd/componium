@@ -50,6 +50,9 @@ app.controller('compositionCtrl', [
         .then(loadCompositionSuccess, loadCompositionError);
     }
 
+    // onMouseOver(clip) https://docs.angularjs.org/api/ng/directive/ngMouseover
+    // onMouseOut(clip) https://docs.angularjs.org/api/ng/directive/ngMouseleave
+
     //$scope.orangeButtonLeftText = domainModel.buttonsData.orangeButtonLeftData.text;
     //$scope.orangeButtonRightText = domainModel.buttonsData.orangeButtonRightData.text;
 

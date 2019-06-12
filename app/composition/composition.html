@@ -95,7 +95,7 @@
         <!-- the width is a property of the clip -->
         <!-- it will later be calculated based on the duration -->
         <!-- for now you can take pixels -->
-        <div class="clip" ng-repeat="clip in part.clips"
+        <div class="clip" ng-repeat="clip in part.clips" ng-mouse-leave="onMouseLeave(clip)"
           style="width:{{clip.width}}px ; height:{{domainModel.trackHeight}}px; margin: {{part.marginY}}px {{part.marginX}}px;">
           <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{domainModel.trackHeight}}">
             <!-- the width can be from the exact same object / field as above-->
@@ -107,6 +107,7 @@
             <!-- based on some formula like "always some number smaller -->
             <!-- than the clip height, always some number smaller than  -->
             <!-- the clip width, etc                                    -->
+            ng-if ... ng-if the opposite - decide if you do the playbutton or the tag
             <circle ng-attr-cx="{{clip.width-10}}" cy="25" r="7" fill="grey"></circle>
             <text ng-attr-x="{{clip.width-16}}" y="28" font-size="9" fill="white">{{clip.tag}}</text>
           </svg>
