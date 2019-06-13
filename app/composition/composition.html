@@ -97,7 +97,7 @@
         <!-- for now you can take pixels -->
         <div class="clip" ng-repeat="clip in part.clips" ng-mouse-leave="onMouseLeave(clip)"
           style="width:{{clip.width}}px ; height:{{domainModel.trackHeight}}px; margin: {{part.marginY}}px {{part.marginX}}px;">
-          <img ng-src="{{trustSrc(icon.src)}}">
+          <img ng-src="{{clip.icon}}">
           <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{domainModel.trackHeight}}">
             <!-- the width can be from the exact same object / field as above-->
             <!-- the height will be the track height -->
