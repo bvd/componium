@@ -67,8 +67,8 @@ angular.module('componiumApp').factory('domainModel', ['storageService', '$q', f
                 width: calculatedWidth,
                 height: this.trackHeight,
                 color: musicClipCreatedEvent.color,
-                tag: musicClipCreatedEvent.tag
-                // icon
+                tag: musicClipCreatedEvent.tag,
+                icon: musicClipCreatedEvent.icon
             };
 
             var relatedPartId = musicClipCreatedEvent.partId;

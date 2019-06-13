@@ -9,46 +9,52 @@ app.config(['$routeProvider', function ($routeProvider) {
   });
 }]);
 
+app.filter('trustUrl', ['$sce', function ($sce) {
+  return function(url) {
+    return $sce.trustAsResourceUrl(url);
+  };
+}]);
+
 app.controller('compositionCtrl', [
   '$scope',
   'domainModel',
-  function ($scope, domainModel) {
+  function ($scope, domainModel, $sce) {
 
     $scope.trackWidth = 826;
     $scope.domainModel = domainModel;
     domainModel.loadComposition('5969')
       .then(loadCompositionSuccess, loadCompositionError);
 
-    function loadCompositionSuccess(){
-      console.log("loaded successfully");
-    }
+    function loadCompositionSuccess() {
+    console.log("loaded successfully");
+  }
 
-    function loadCompositionError(){
-      console.log("load error");
-    }
+    function loadCompositionError() {
+    console.log("load error");
+  }
 
-    $scope.onLeftScrollArrowClick = function(){
-      if($scope.domainModel.scrollData.selectedItem == 0){
-        $scope.domainModel.scrollData.selectedItem = $scope.domainModel.scrollData.items.length -1;
-      }
-      else{
-        $scope.domainModel.scrollData.selectedItem -= 1;
-      }
+    $scope.onLeftScrollArrowClick = function () {
+    if ($scope.domainModel.scrollData.selectedItem == 0) {
+      $scope.domainModel.scrollData.selectedItem = $scope.domainModel.scrollData.items.length - 1;
     }
+    else {
+      $scope.domainModel.scrollData.selectedItem -= 1;
+    }
+  }
 
-    $scope.onRightScrollArrowClick = function(){
-      if($scope.domainModel.scrollData.selectedItem == $scope.domainModel.scrollData.items.length -1){
-        $scope.domainModel.scrollData.selectedItem = 0;
-      }
-      else{
-        $scope.domainModel.scrollData.selectedItem += 1;
-      }
+    $scope.onRightScrollArrowClick = function () {
+    if ($scope.domainModel.scrollData.selectedItem == $scope.domainModel.scrollData.items.length - 1) {
+      $scope.domainModel.scrollData.selectedItem = 0;
     }
+    else {
+      $scope.domainModel.scrollData.selectedItem += 1;
+    }
+  }
 
-    $scope.onScrollItemClicked = function(){
-      domainModel.loadComposition(domainModel.scrollData.items[domainModel.scrollData.selectedItem].id)
-        .then(loadCompositionSuccess, loadCompositionError);
-    }
+    $scope.onScrollItemClicked = function () {
+    domainModel.loadComposition(domainModel.scrollData.items[domainModel.scrollData.selectedItem].id)
+      .then(loadCompositionSuccess, loadCompositionError);
+  }
 
     // onMouseOver(clip) https://docs.angularjs.org/api/ng/directive/ngMouseover
     // onMouseOut(clip) https://docs.angularjs.org/api/ng/directive/ngMouseleave
@@ -64,7 +70,7 @@ app.controller('compositionCtrl', [
     // $scope.text1 = 'Composition : Spirit Birds';
     // $scope.numTracks = 6;
     // $scope.trackHeight = 35;
-    
+
     // $scope.tracks = [
     //   {
     //     color: "pink",
