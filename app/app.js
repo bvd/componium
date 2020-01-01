@@ -10,6 +10,5 @@ angular.module('componiumApp', [
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
-
-  $routeProvider.otherwise({redirectTo: '/composition'});
+  $routeProvider.otherwise({redirectTo: '/composition/6033'});
 }]);

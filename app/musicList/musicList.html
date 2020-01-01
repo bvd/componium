@@ -1,7 +1,169 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
+<div class="container">
+  <hr />
+  <div class="row form-row">
+    <div class="span9" style="color:gray; font-size:24px;">
+      <span>Wil je de compositie niet kwijtraken: geef hem een naam die je later kunt opzoeken</span>
+    </div>
+  </div>
+  <hr />
+  <div class="row form-row" style="color:rgb(105, 105, 105);">
+    <div class="span6">
+      <input type="text" style="width:460px; font-size:24px; color:#383838;" id="search" ng-model="searchValue" />
+      <a class="searchButton" ng-click="callSearchApi(searchValue)">ZOEK</a>
+    </div>
+  </div>
+  <hr />
+  <div id="muzieklijstContainer">
+    <div style="color:gray;">
+      <div class="form row" ng-if="musicListData.Length">
+        <div class="span3" ng-if="pageNum > 0">
+          <span onclick="ikc.muzieklijst.pageBack()" style="text-decoration: underline; cursor: pointer;">pagina
+            terug</span>
+        </div>
+        <div class="span4">
+          <span style="padding-left: 50px;">{{count}} resultaten - pagina {{pageNum + 1}} / {{totalPages}}</span>
+        </div>
+        <div class="span2" style="text-align:right;" ng-if="pageNum + 1 < totalPages">
+          <span onclick="ikc.muzieklijst.pageForward()" style="text-decoration: underline; cursor: pointer;">pagina
+            vooruit</span>
+        </div>
+      </div>
 
-  My favorite number of yesterday: {{myNumber}}
-</p>
+      <hr />
+      <div class="row" style="font-size: 32px; margin-top:5px;" ng-repeat="item in musicListData">
+        <div class="span7">{{item.name}}</div>
+        <div class="span2" style="font-size: 16px; text-align: right;">
+          {{item.day}} {{item.month}} {{item.year}}
+        </div>
+        <br />
+        <div class="span5">
+          <a ng-href="#!/composition/{{item.id}}" ng-click="openComposition(item.id)"
+            style="text-decoration: underline; cursor: pointer; font-size:16px;">open in componeertool</a>
+        </div>
+        <div class="span4" style="text-align:right;">
+          <audio ng-if="item.published" controls="controls" preload="none">
+            <source ng-src="item.mp3url" type="audio/mpeg">Your browser does not support the audio element.
+          </audio>
+          <span ng-if="!item.published" style="font-size: 16px;">geen MP3 aanwezig (niet gedeeld)</span>
+        </div>
+      </div>
+      <hr />
+      <div>
+      </div>
+    </div>
+<script type="text/javascript">
+    
+	
+	/*
+	
+	
+	
+	
+	if(typeof(ikc.muzieklijst) === "undefined"){
+	
+		
+		
+		ikc.muzieklijst = {
+			
+			searchString: "*",
+			callback: function(){ alert("no callback for muzieklijst search"); },
+			search: function(cb){
+				
+				
+				
+	
+				
+			},
+			
+			init: function(){
+				ikc.muzieklijst.searchString = "*";
+				if (!$R.templates[ikc.muzieklijst.itemsTemplate])
+				{
+					$R.get( ikc.conf.js_url + ikc.muzieklijst.itemsTemplate + ".html?cb" + new Date().getTime() , null, function(d){
+						$R.templates(ikc.muzieklijst.itemsTemplate, d);
+						ikc.muzieklijst.search();
+					}, 'html' );
+				}else{
+					ikc.muzieklijst.search();
+				}
+			},
+			
+			pageBack: function(){
+				ikc.muzieklijst.pageNum--;
+				ikc.muzieklijst.search();
+			},
+			
+			pageForward: function(){
+				ikc.muzieklijst.pageNum++;
+				ikc.muzieklijst.search();
+			}
+		};
+	}
+	
+	if(typeof(ikc.muzieklijstForm) === "undefined"){
+		
+		
+		
+		
+		ikc.muzieklijstForm = {
+			
+			muzieklijstContainerId: "muzieklijstContainer",
+			textFieldId: "search",
+			searchButtonClass: "searchButton",
+			
+			click: function(){
+				ikc.muzieklijst.pageNum = 0;
+				var searchValue = $R("#" + ikc.muzieklijstForm.textFieldId).val();
+				ikc.muzieklijst.searchString = searchValue;
+				if(searchValue == ""){
+					ikc.muzieklijst.searchString = "*";
+				}
+				ikc.muzieklijst.mine = $R('input[name=whose]:checked').val() === "mine";
+				ikc.muzieklijst.search();
+			},
+			
+			init: function(){
+				ikc.muzieklijst.callback = ikc.muzieklijstForm.renderList;
+				$R("." + this.searchButtonClass).click(this.click);
+			},
+			
+			renderList: function(items){
+				
+				items.count = items["@odata.count"];
+				items.totalPages = Math.ceil(items.count/items.pageLength);
+				
+				var i;
+				var months = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
+				
+				for (i = 0; i < items.value.length; ++i) {
+					var date = new Date(items.value[i].time * 1000);
+					
+					var year = date.getFullYear();
+					var month = date.getMonth();
+					var date = date.getDate();
+					
+					items.value[i].year = year;
+					items.value[i].month = months[month];
+					items.value[i].day = date;
+					
+					items.value[i].mp3url = ikc.conf.published_url + items.value[i].id + ".MP3";
+				}
+				
+				//console.log(items);
+				
+				var template = $R.templates[ikc.muzieklijst.itemsTemplate];
+				var rendered = template.render(items);
+				$R("#" + ikc.muzieklijstForm.muzieklijstContainerId).html(rendered);
+			}
+			
+		};
+		
+		
+	}
+	
+	ikc.muzieklijst.init();
+  ikc.muzieklijstForm.init();
+  
+  */
+	
+  </script>

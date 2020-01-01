@@ -3,58 +3,90 @@
 var app = angular.module('componiumApp.composition', ['ngRoute']);
 
 app.config(['$routeProvider', function ($routeProvider) {
-  $routeProvider.when('/composition', {
+  $routeProvider.when('/composition/:compositionId', {
     templateUrl: 'composition/composition.html',
     controller: 'compositionCtrl'
   });
 }]);
 
 app.filter('trustUrl', ['$sce', function ($sce) {
-  return function(url) {
+  return function (url) {
     return $sce.trustAsResourceUrl(url);
   };
 }]);
 
 app.controller('compositionCtrl', [
   '$scope',
+  '$routeParams',
   'domainModel',
-  function ($scope, domainModel, $sce) {
+  'signalRService',
+  'storageService',
+  function ($scope, $routeParams, domainModel, signalRService, storageService) {
+    
+    signalRService.on('newMessage', function(data){
+      $scope.domainModel.messageReceived.text = data.text;
+    });
+
+    $scope.compositionId = $routeParams.compositionId;
+
+    $scope.hideModalIdentification = function(){
+      $scope.domainModel.showModalBackground = false;
+      $scope.domainModel.showModalIdentification = false;
+    }
+    
+    $scope.closeModalIdentification = function(){
+      $scope.hideModalIdentification();
+      storageService.sendToQueue({
+        Type: 'Ikc2020.Events.Composition.OpenComposition, Ikc2020, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null',
+        compositionId: $scope.compositionId,
+        userName: domainModel.userName,
+        schoolName: domainModel.schoolName
+      });
+    }
 
     $scope.trackWidth = 826;
     $scope.domainModel = domainModel;
-    domainModel.loadComposition('5969')
+    
+    domainModel.loadComposition($scope.compositionId)
       .then(loadCompositionSuccess, loadCompositionError);
+
+    /*if(domainModel.user == null){
+      modalService.Open("identification-modal");
+      
+      this.loadModalIdentificationForm({
+        name: "",
+        school: "",
+        town: "",
+        class: ""
+      });
+    }*/
 
     function loadCompositionSuccess() {
-    console.log("loaded successfully");
-  }
+      console.log("loaded successfully");
+    }
 
     function loadCompositionError() {
-    console.log("load error");
-  }
+      console.log("load error");
+    }
 
     $scope.onLeftScrollArrowClick = function () {
-    if ($scope.domainModel.scrollData.selectedItem == 0) {
-      $scope.domainModel.scrollData.selectedItem = $scope.domainModel.scrollData.items.length - 1;
+      if ($scope.domainModel.scrollData.selectedItem == 0) {
+        $scope.domainModel.scrollData.selectedItem = $scope.domainModel.scrollData.items.length - 1;
+      }
+      else {
+        $scope.domainModel.scrollData.selectedItem -= 1;
+      }
     }
-    else {
-      $scope.domainModel.scrollData.selectedItem -= 1;
-    }
-  }
 
     $scope.onRightScrollArrowClick = function () {
-    if ($scope.domainModel.scrollData.selectedItem == $scope.domainModel.scrollData.items.length - 1) {
-      $scope.domainModel.scrollData.selectedItem = 0;
+      if ($scope.domainModel.scrollData.selectedItem == $scope.domainModel.scrollData.items.length - 1) {
+        $scope.domainModel.scrollData.selectedItem = 0;
+      }
+      else {
+        $scope.domainModel.scrollData.selectedItem += 1;
+      }
     }
-    else {
-      $scope.domainModel.scrollData.selectedItem += 1;
-    }
-  }
-
-    $scope.onScrollItemClicked = function () {
-    domainModel.loadComposition(domainModel.scrollData.items[domainModel.scrollData.selectedItem].id)
-      .then(loadCompositionSuccess, loadCompositionError);
-  }
+    
 
     // onMouseOver(clip) https://docs.angularjs.org/api/ng/directive/ngMouseover
     // onMouseOut(clip) https://docs.angularjs.org/api/ng/directive/ngMouseleave
@@ -68,7 +100,6 @@ app.controller('compositionCtrl', [
     // $scope.sloganText = 'Love and light<br/>the Love is all around, each moment of our life, inside and outside<br/>we just have to open our doors to let it in';
     // $scope.text2 = 'Name : Wonder Woman';
     // $scope.text1 = 'Composition : Spirit Birds';
-    // $scope.numTracks = 6;
     // $scope.trackHeight = 35;
 
     // $scope.tracks = [

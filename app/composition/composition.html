@@ -1,20 +1,23 @@
 <body ng-app ng-controller='compositionCtrl'>
   <!--AREA Page-->
   <div class="areaContainer">
+
+
     <!--RECTANGLE BUTTON with name and noma creation from the participant-->
     <div class="namesContainer">
       <span ng-if="compositionName">name: {{compositionData.compositionName}}</span>
       <span ng-if="composerName" class="right">by: {{compositionData.composerName}}</span>
     </div>
     <!--BUTTON Music list and SLOGAN-->
-    <div class="textAndButtonOrangesContainer">
+    <div class="textAndButtonOrangesContainer" style="z-index:-1;">
       <span class="text" ng-bind-html="sloganText"></span>
       <div class="buttonOrangeTextContainer">
-        <span ng-if="orangeButtonLeftText" class="buttonOrangeText">
-          <span ng-bind-html="orangeButtonLeftText"></span>
+        <span ng-if="domainModel.buttonsData.orangeButtonLeftData.text" class="buttonOrangeText"
+          ng-click="domainModel.emitEvent(domainModel.buttonsData.orangeButtonLeftData.event)">
+          <span ng-bind-html="domainModel.buttonsData.orangeButtonLeftData.text"></span>
         </span>
-        <span ng-if="orangeButtonRightText" class="buttonOrangeText right">
-          <span ng-bind-html="orangeButtonRightText"></span>
+        <span ng-if="domainModel.buttonsData.orangeButtonRightData.text" class="buttonOrangeText right">
+          <span ng-bind-html="domainModel.buttonsData.orangeButtonRightData.text"></span>
         </span>
       </div>
     </div>
@@ -39,7 +42,7 @@
           </svg>
           <div class="triangle triangle2"></div>
         </div>
-        <div class="buttonContainer buttonContainer3">
+        <div ng-if="domainModel.saveButtonVisible" class="buttonContainer saveButton">
           <svg>
             <circle cx="27" cy="27" r="27" fill="red"></circle>
             <rect x="16" y="16" width="21" height="4" fill="white"></rect>
@@ -51,16 +54,18 @@
       <div class="areaTracksContainer">
         <!--TRACKS-->
         <div class="allTracks">
-          <div class=" track" ng-repeat="track in tracks">
-            <svg ng-attr-width="{{trackWidth}}" ng-attr-height="{{trackHeight}}">
-              <rect ng-attr-width="{{trackWidth}}" style="fill:{{track.color}}" ng-attr-height="{{trackHeight}}">
+          <div class="track" ng-repeat="track in domainModel.tracks">
+            <svg ng-attr-width="{{trackWidth}}" ng-attr-height="{{domainModel.trackHeight}}">
+              <rect ng-attr-width="{{trackWidth}}" style="fill:{{track.color}}"
+                ng-attr-height="{{domainModel.trackHeight}}">
               </rect>
               <circle ng-repeat="point in pointPositions" ng-attr-cx="{{point}}" cy="0" r="1" fill="white"></circle>
             </svg>
             <!-- CLIPS in the tracks -->
             <div style="left:{{clip.position}}px" class="clip" ng-repeat="clip in track.clips">
-              <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{trackHeight}}">
-                <rect style="fill:{{clip.color}}" y="0" ng-attr-width="{{clip.width}}" ng-attr-height="{{trackHeight}}">
+              <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{domainModel.trackHeight}}">
+                <rect style="fill:{{clip.color}}" y="0" ng-attr-width="{{clip.width}}"
+                  ng-attr-height="{{domainModel.trackHeight}}">
                 </rect>
                 <circle ng-attr-cx="{{clip.width-10}}" cy="25" r="7" fill="grey"></circle>
                 <text ng-attr-x="{{clip.width-16}}" y="28" font-size="9" fill="white">{{clip.tag}}</text>
@@ -77,44 +82,80 @@
         </div>
       </div>
     </div>
-  </div>
-  <!--SCROLL to choose other compositions + TITLE and triangle-->
-  <div ng-if="domainModel.scrollData.items.length" class="scrollContainer">
-    <span class="text2" ng-bind-html="domainModel.scrollGetSelectedItemName()" ng-click="onScrollItemClicked()"></span>
-    <!--triangle LEFT AND RIGT -->
-    <div class="triangle triangle1" ng-click="onLeftScrollArrowClick()"></div>
-    <div class="triangle triangle2" ng-click="onRightScrollArrowClick()"></div>
-  </div>
-  <!-- PARTS container (music material) // remove with possiblities to restore : background-color:{{part.color}}; in each part (<div class="part" style="...)-->
-  <div  ng-if="domainModel.parts.length" class="partsContainer">
-    <div class="part" style="width:{{part.width}}px" ng-repeat="part in domainModel.parts">
-      <!-- the text -->
-      <span class="title" style="width:{{part.width}}px">{{part.name.text}}</span>
-      <!-- max-width should come from the same field as the width above -->
-      <div class="clipsContainer" style="width:{{part.width}}px">
-        <!-- the width is a property of the clip -->
-        <!-- it will later be calculated based on the duration -->
-        <!-- for now you can take pixels -->
-        <div class="clip" ng-repeat="clip in part.clips" ng-mouse-leave="onMouseLeave(clip)"
-          style="width:{{clip.width}}px ; height:{{domainModel.trackHeight}}px; margin: {{part.marginY}}px {{part.marginX}}px;">
-          <img ng-src="{{clip.icon}}">
-          <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{domainModel.trackHeight}}">
-            <!-- the width can be from the exact same object / field as above-->
-            <!-- the height will be the track height -->
-            <!-- the color will come from the data -->
-            <rect style="fill:{{clip.color}}" ng-attr-width="{{clip.width}}" ng-attr-height="{{clip.height}}"></rect>
-            <!-- the following for text and the circle                  -->
-            <!-- for the position you have to make some calculation     -->
-            <!-- based on some formula like "always some number smaller -->
-            <!-- than the clip height, always some number smaller than  -->
-            <!-- the clip width, etc                                    -->
-            ng-if ... ng-if the opposite - decide if you do the playbutton or the tag
-            <circle ng-attr-cx="{{clip.width-10}}" cy="25" r="7" fill="grey"></circle>
-            <text ng-attr-x="{{clip.width-16}}" y="28" font-size="9" fill="white">{{clip.tag}}</text>
-          </svg>
+    <!--SCROLL to choose other compositions + TITLE and triangle-->
+    <div ng-if="domainModel.scrollData.items.length" class="scrollContainer">
+      <span class="textSpacer">
+        <span class="title"><a ng-href="#!/composition/{{domainModel.scrollGetSelectedItemId()}}"
+            ng-bind-html="domainModel.scrollGetSelectedItemName()"></a></span>
+      </span>
+      <!--triangle LEFT AND RIGT -->
+      <div class="triangle triangle1" ng-click="onLeftScrollArrowClick()"></div>
+      <div class="triangle triangle2" ng-click="onRightScrollArrowClick()"></div>
+    </div>
+    <!-- PARTS container (music material) // remove with possiblities to restore : background-color:{{part.color}}; in each part (<div class="part" style="...)-->
+    <div ng-if="domainModel.parts.length" class="partsContainer">
+      <div class="part" style="width:{{part.width}}px" ng-repeat="part in domainModel.parts">
+        <!-- the text -->
+        <span class="title" style="width:{{part.width}}px">{{part.name.text}}</span>
+        <!-- max-width should come from the same field as the width above -->
+        <div class="clipsContainer" style="width:{{part.width}}px">
+          <!-- the width is a property of the clip -->
+          <!-- it will later be calculated based on the duration -->
+          <!-- for now you can take pixels -->
+          <div class="clip" ng-repeat="clip in part.clips" ng-mouse-leave="onMouseLeave(clip)"
+            style="width:{{clip.width}}px ; height:{{domainModel.trackHeight}}px; margin: {{part.marginY}}px {{part.marginX}}px; background-color: {{clip.color}}">
+
+            <div class="iconContainer" style="width:{{clip.width}}px ; height:{{domainModel.trackHeight}}px;">
+              <table>
+                <tr>
+                  <td>
+                    <img ng-src="{{clip.icon}}"></img>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <svg ng-attr-width="{{clip.width}}" ng-attr-height="{{domainModel.trackHeight}}">
+              <!--<rect style="fill:{{clip.color}}" ng-attr-width="{{clip.width}}" ng-attr-height="{{clip.height}}"></rect>-->
+              <!---ng-if ... ng-if the opposite - decide if you do the playbutton or the tag-->
+              <circle ng-attr-cx="{{clip.width-10}}" ng-attr-cy="{{clip.height - 10}}" r="7" fill="grey"></circle>
+              <text ng-attr-x="{{clip.width-16}}" y="28" font-size="9" fill="white">{{clip.tag}}</text>
+            </svg>
+          </div>
         </div>
+
+      </div>
+
+    </div>
+    <div class="modal-background" ng-show="domainModel.showModalBackground">
+
+    </div>
+
+    <div class="modal-identification" ng-show="domainModel.  showModalIdentification">
+      <div>
+        <form>
+          <div>
+            <h2>hoe heet jij</h2>
+          </div>
+          <div>
+            <div><span>naam:</span></div>
+            <div><input ng-model="domainModel.userName" type="text" /></div>
+          </div>
+          <div>
+              <h2>hoe heet jouw school</h2>
+            </div>
+            <div>
+              <div><span>school:</span></div>
+              <div><input ng-model="domainModel.schoolName" type="text" /></div>
+            </div>
+          <div>
+            <input class="okButton" type="button" value="klaar" ng-click="closeModalIdentification()"/>
+          </div>
+        </form>
       </div>
     </div>
+
+
   </div>
-  </div>
+
+
 </body>
