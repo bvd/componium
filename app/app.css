@@ -240,6 +240,18 @@
 .clip text {
   font-family: 'Arvo', serif
 }
+/*image-icon in clip*/
+.clip img {
+  display: block;
+  margin: auto;
+  height: 80%;
+  width: 80%;
+}
+.clearfix {
+  overflow: auto;
+}
+
+
 
 /* Scroll and Title Music */
 .scrollContainer {
